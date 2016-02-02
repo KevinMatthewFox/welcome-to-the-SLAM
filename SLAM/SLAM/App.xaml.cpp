@@ -7,6 +7,7 @@
 #include "MainPage.xaml.h"
 
 using namespace SLAM;
+using namespace ABI::Windows::Devices::Gpio;
 
 using namespace Platform;
 using namespace Windows::ApplicationModel;
