@@ -5,9 +5,9 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include "winrt\windows.devices.gpio.h"
 
 using namespace SLAM;
-using namespace ABI::Windows::Devices::Gpio;
 
 using namespace Platform;
 using namespace Windows::ApplicationModel;
