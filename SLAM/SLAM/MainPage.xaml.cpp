@@ -25,3 +25,8 @@ MainPage::MainPage()
 {
 	InitializeComponent();
 }
+
+void SLAM::MainPage::inputButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+{
+	greetingOutput->Text = "Hello, " + nameInput->Text + "!";
+}
