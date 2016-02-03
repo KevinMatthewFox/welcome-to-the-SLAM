@@ -17,5 +17,7 @@ namespace SLAM
 	public:
 		MainPage();
 
+	private:
+		void inputButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e);
 	};
 }
