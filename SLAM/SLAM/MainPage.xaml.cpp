@@ -26,7 +26,6 @@ using namespace Windows::Devices::Enumeration;
 MainPage::MainPage()
 {
 	InitializeComponent();
-	printf("hello world\n");
 }
 
 void SLAM::MainPage::inputButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
