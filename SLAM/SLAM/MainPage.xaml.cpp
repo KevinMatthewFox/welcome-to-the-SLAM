@@ -2,6 +2,10 @@
 // MainPage.xaml.cpp
 // Implementation of the MainPage class.
 //
+// Author: ENGR 498 - Team 15017
+//		Kevin Fox
+// Description: SLAM, baby
+//
 
 #include "pch.h"
 #include "MainPage.xaml.h"
@@ -28,13 +32,34 @@ MainPage::MainPage()
 {
 	InitializeComponent();
 
-	//Declarations
-	auto gpio = GpioController::GetDefault();
-	GpioPin ^testPin;
-	const int gpio4 = 4;
+	//Definitions
 	GpioPinValue high = GpioPinValue::High;
+	GpioPinValue low = GpioPinValue::Low;
 	GpioPinDriveMode output = GpioPinDriveMode::Output;
-	int x = 1;
+	GpioPinDriveMode input = GpioPinDriveMode::Input;
+
+	//GPIO pins - uncomment the ones needed
+	//const int gpio4 = 4; //PullUp; header pin 7
+	//const int gpio5 = 5; //PullUp; header pin 29
+	//const int gpio6 = 6; //PullUp; header pin 31
+	//const int gpio12 = 12; //PullDown; header pin 32
+	//const int gpio13 = 13; //PullDown; header pin 33
+	//const int gpio16 = 16; //PullDown; header pin 36
+	//const int gpio17 = 17; //PullDown; header pin 11
+	//const int gpio18 = 18; //PullDown; header pin 12
+	//const int gpio19 = 19; //PullDown; header pin 35
+	//const int gpio20 = 20; //PullDown; header pin 38
+	//const int gpio21 = 21; //PullDown; header pin 40
+	//const int gpio22 = 22; //PullDown; header pin 15
+	//const int gpio23 = 23; //PullDown; header pin 16
+	//const int gpio24 = 24; //PullDown; header pin 18
+	//const int gpio25 = 25; //PullDown; header pin 22
+	//const int gpio26 = 26; //PullDown; header pin 37
+	//const int gpio27 = 27; //PullDown; header pin 13
+
+	//Declarations
+	GpioController^ gpio = GpioController::GetDefault();
+	GpioPin ^testPin = nullptr;
 
 	//Testing for gpiocontroller
 	if (gpio == nullptr)
@@ -45,11 +70,11 @@ MainPage::MainPage()
 	}
 	else
 	{
-		
-		testPin = gpio->OpenPin(gpio4);
-		testPin->Write(high);
-		testPin->SetDriveMode(output);
 	}
+
+	//testPin = gpio->OpenPin(gpio4); //power-on the pin
+	//testPin->Write(high);
+	//testPin->SetDriveMode(output);
 
 	return;
 }
