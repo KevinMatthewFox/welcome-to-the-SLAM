@@ -5,6 +5,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include <iostream>
 
 using namespace SLAM;
 
@@ -26,9 +27,34 @@ using namespace Windows::Devices::Enumeration;
 MainPage::MainPage()
 {
 	InitializeComponent();
+
+	//Declarations
+	auto gpio = GpioController::GetDefault();
+	GpioPin ^testPin;
+	const int gpio4 = 4;
+	GpioPinValue high = GpioPinValue::High;
+	GpioPinDriveMode output = GpioPinDriveMode::Output;
+	int x = 1;
+
+	//Testing for gpiocontroller
+	if (gpio == nullptr)
+	{
+		testPin = nullptr;
+		std::cout << "There is no GPIO controller on this device.";
+		return;
+	}
+	else
+	{
+		
+		testPin = gpio->OpenPin(gpio4);
+		testPin->Write(high);
+		testPin->SetDriveMode(output);
+	}
+
+	return;
 }
 
-void SLAM::MainPage::inputButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
+/*void SLAM::MainPage::inputButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
 {
 	greetingOutput->Text = "Hello, " + nameInput->Text + "!";
-}
+}*/
