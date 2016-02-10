@@ -58,7 +58,7 @@ MainPage::MainPage()
 	//const int gpio27 = 27; //PullDown; header pin 13
 
 	//Declarations
-	GpioController^ gpio = GpioController::GetDefault();
+	GpioController ^gpio = GpioController::GetDefault();
 	GpioPin ^testPin = nullptr;
 
 	//Testing for gpiocontroller
