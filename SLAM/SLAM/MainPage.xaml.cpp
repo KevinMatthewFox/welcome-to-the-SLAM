@@ -33,10 +33,17 @@ MainPage::MainPage()
 	InitializeComponent();
 
 	//Definitions
-	GpioPinValue high = GpioPinValue::High;
-	GpioPinValue low = GpioPinValue::Low;
-	GpioPinDriveMode output = GpioPinDriveMode::Output;
-	GpioPinDriveMode input = GpioPinDriveMode::Input;
+	GpioPinValue high = GpioPinValue::High; //1
+	GpioPinValue low = GpioPinValue::Low; //0
+	GpioPinDriveMode output = GpioPinDriveMode::Output; //1
+	GpioPinDriveMode outputOD = GpioPinDriveMode::OutputOpenDrain; //4
+	GpioPinDriveMode outputOS = GpioPinDriveMode::OutputOpenSource; //6
+	GpioPinDriveMode outputODPU = GpioPinDriveMode::OutputOpenDrainPullUp; //5
+	GpioPinDriveMode outputOSPD = GpioPinDriveMode::OutputOpenSourcePullDown; //7
+	GpioPinDriveMode input = GpioPinDriveMode::Input; //0
+	GpioPinDriveMode inputPU = GpioPinDriveMode::InputPullUp; //2
+	GpioPinDriveMode inputPD = GpioPinDriveMode::InputPullDown; //3
+
 
 	//GPIO pins - uncomment the ones needed
 	//const int gpio4 = 4; //PullUp; header pin 7
