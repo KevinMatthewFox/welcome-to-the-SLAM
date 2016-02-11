@@ -10,5 +10,3 @@ RBP2 Pin Numbers: http://ms-iot.github.io/content/images/PinMappings/RP2_Pinout.
 and https://ms-iot.github.io/content/en-US/win10/samples/PinMappingsRPi2.htm
 
 Windows::Devices::Gpio namespace how to use: https://msdn.microsoft.com/en-us/library/windows.devices.gpio.aspx
-
-test edit
