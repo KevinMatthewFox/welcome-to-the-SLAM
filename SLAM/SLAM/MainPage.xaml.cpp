@@ -43,11 +43,12 @@ MainPage::MainPage()
 	GpioPinDriveMode input = GpioPinDriveMode::Input; //0
 	GpioPinDriveMode inputPU = GpioPinDriveMode::InputPullUp; //2
 	GpioPinDriveMode inputPD = GpioPinDriveMode::InputPullDown; //3
+	GpioPinValue Read();
 
 
 	//GPIO pins - uncomment the ones needed
-	//const int gpio4 = 4; //PullUp; header pin 7
-	//const int gpio5 = 5; //PullUp; header pin 29
+	const int gpio4 = 4; //PullUp; header pin 7
+	const int gpio5 = 5; //PullUp; header pin 29
 	//const int gpio6 = 6; //PullUp; header pin 31
 	//const int gpio12 = 12; //PullDown; header pin 32
 	//const int gpio13 = 13; //PullDown; header pin 33
@@ -66,17 +67,27 @@ MainPage::MainPage()
 
 	//Declarations
 	GpioController ^gpio = GpioController::GetDefault();
-	GpioPin ^testPin = nullptr;
+	GpioPin ^inputTransmitter = nullptr;
+	GpioPin ^outputTransmitter = nullptr;
+	inputTransmitter = gpio->OpenPin(gpio4);
+	outputTransmitter = gpio->OpenPin(gpio5);
 
 	//Testing for gpiocontroller
 	if (gpio == nullptr)
 	{
-		testPin = nullptr;
+		//estPin = nullptr;
 		std::cout << "There is no GPIO controller on this device.";
 		return;
 	}
 	else
 	{
+		while (1) {
+			if(inputTransmitter->Read()==high)
+				outputTransmitter->Write(high);
+			else
+				outputTransmitter->Write(low);
+		}
+
 	}
 
 	//testPin = gpio->OpenPin(gpio4); //power-on the pin
