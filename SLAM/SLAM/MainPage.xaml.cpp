@@ -85,7 +85,7 @@ MainPage::MainPage()
 			if(inputTransmitter->Read()==high)
 				outputTransmitter->Write(high);
 			else
-				outputTransmitter->Write(low);
+				outputTransmitter->Write(low); 
 		}
 
 	}
