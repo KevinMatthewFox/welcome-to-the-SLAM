@@ -19,8 +19,11 @@ How to deploy code onto RBP2:
 
 -Go to "Configuration Properties -> Debugging"
 
--Click on "Machine Name" -> "<Locate>"\n
+-Click on "Machine Name" -> "<Locate>"
+
 -On the next prompt, the RBP2 should appear under automatic. If not there, open the RBP2 from the IoT device portal, copy and paste the
   IP address into manual. Make sure to remove the http and the /'s
+  
 -Apply
+
 -Run
