@@ -43,7 +43,7 @@ MainPage::MainPage()
 	GpioPinDriveMode input = GpioPinDriveMode::Input; //0
 	//GpioPinDriveMode inputPU = GpioPinDriveMode::InputPullUp; //2
 	//GpioPinDriveMode inputPD = GpioPinDriveMode::InputPullDown; //3
-	GpioPinValue Read();
+	//GpioPinValue Read();
 
 
 
@@ -76,14 +76,17 @@ MainPage::MainPage()
 	//Testing for gpiocontroller
 	if (gpio == nullptr)
 	{
-		//estPin = nullptr;
+		inputTransmitter = nullptr;
+		outputTransmitter = nullptr;
 		std::cout << "There is no GPIO controller on this device.";
 		return;
 	}
 	else
 	{
+		inputTransmitter->SetDriveMode(input);
+		outputTransmitter->SetDriveMode(output);
 		while (1) {
-			if(inputTransmitter->Read()==high)
+			if(inputTransmitter->Read() == high)
 				outputTransmitter->Write(high);
 			else
 				outputTransmitter->Write(low); 
