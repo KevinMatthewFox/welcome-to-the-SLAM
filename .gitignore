@@ -1,1 +1,7 @@
 *.opendb
+
+/SLAM/ARM/**
+
+/SLAM/obj/**
+
+/SLAM/SLAM/Generated Files/**
