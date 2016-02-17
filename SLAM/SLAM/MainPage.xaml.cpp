@@ -1,4 +1,4 @@
-//
+﻿//
 // MainPage.xaml.cpp
 // Implementation of the MainPage class.
 //
@@ -32,7 +32,7 @@ using namespace Windows::Devices::Enumeration;
 MainPage::MainPage()
 {
 	InitializeComponent();
-
+	 // 
 	//Definitions
 	GpioPinValue high = GpioPinValue::High; //1
 	GpioPinValue low = GpioPinValue::Low; //0
@@ -49,9 +49,9 @@ MainPage::MainPage()
 
 
 	//GPIO pins - uncomment the ones needed
-	const int gpio4 = 4; //PullUp; header pin 7
-	const int gpio5 = 5; //PullUp; header pin 29
-	//const int gpio6 = 6; //PullUp; header pin 31
+	const int gpio4 = 4; //Pin for the transmitter
+	const int gpio5 = 5; //Receiver
+	const int gpio6 = 6; //Infrad sensor output
 	//const int gpio12 = 12; //PullDown; header pin 32
 	//const int gpio13 = 13; //PullDown; header pin 33
 	//const int gpio16 = 16; //PullDown; header pin 36
@@ -71,14 +71,17 @@ MainPage::MainPage()
 	GpioController ^gpio = GpioController::GetDefault();
 	GpioPin ^inputTransmitter = nullptr;
 	GpioPin ^outputTransmitter = nullptr;
+	GpioPin ^infradSensor1 = nullptr;
 	inputTransmitter = gpio->OpenPin(gpio4);
 	outputTransmitter = gpio->OpenPin(gpio5);
+	infradSensor1 = gpio->OpenPin(gpio6);
 
 	//Testing for gpiocontroller
 	if (gpio == nullptr)
 	{
 		inputTransmitter = nullptr;
 		outputTransmitter = nullptr;
+		infradSensor1 = nullptr;
 		std::cout << "There is no GPIO controller on this device.";
 		return;
 	}
@@ -86,12 +89,23 @@ MainPage::MainPage()
 	{
 		inputTransmitter->SetDriveMode(input);
 		outputTransmitter->SetDriveMode(output);
+		infradSensor1->SetDriveMode(input);
+
 		while (1) {
 			if(inputTransmitter->Read() == high)
 				outputTransmitter->Write(high);
 			else
 				outputTransmitter->Write(low); 
+
+			if (infradSensor1->Read() == high) {
+				outputTransmitter->Write(high);
+			}
+			else
+				outputTransmitter->Write(low);
+
 		}
+
+
 
 	}
 
