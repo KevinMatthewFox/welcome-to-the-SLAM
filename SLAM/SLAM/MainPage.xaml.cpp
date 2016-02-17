@@ -9,6 +9,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+//#include "Motor.h"
 #include <iostream>
 
 using namespace SLAM;
