@@ -9,7 +9,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
-//#include "Motor.h"
+#include "Motor.h"
 #include <iostream>
 
 using namespace SLAM;
@@ -90,6 +90,10 @@ MainPage::MainPage()
 		inputTransmitter->SetDriveMode(input);
 		outputTransmitter->SetDriveMode(output);
 		infradSensor1->SetDriveMode(input);
+		//Motor motor;
+		//motor.setDir(forward);
+		//motor.setDir(right);
+
 
 		while (1) {
 			if(inputTransmitter->Read() == high)
