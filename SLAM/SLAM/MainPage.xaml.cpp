@@ -50,12 +50,12 @@ MainPage::MainPage()
 	//GPIO pins - uncomment the ones needed
 	const int gpio4 = 4; //Pin for the transmitter
 	const int gpio5 = 5; //Receiver
-	const int gpio6 = 6; //Infrad sensor output
-	//const int gpio12 = 12; //PullDown; header pin 32
-	//const int gpio13 = 13; //PullDown; header pin 33
-	//const int gpio16 = 16; //PullDown; header pin 36
-	//const int gpio17 = 17; //PullDown; header pin 11
-	//const int gpio18 = 18; //PullDown; header pin 12
+	const int gpio6 = 6; //Infrad sensor1 input
+	const int gpio12 = 12; //Infrad sensor2 input
+	const int gpio13 = 13; //Infrad sensor3 input
+	const int gpio16 = 16; //Infrad sensor1 output
+	const int gpio18 = 18; //Infrad sensor2 output
+	const int gpio22 = 22; //Infrad sensor3 output
 	//const int gpio19 = 19; //PullDown; header pin 35
 	//const int gpio20 = 20; //PullDown; header pin 38
 	//const int gpio21 = 21; //PullDown; header pin 40
@@ -71,9 +71,23 @@ MainPage::MainPage()
 	GpioPin ^inputTransmitter = nullptr;
 	GpioPin ^outputTransmitter = nullptr;
 	GpioPin ^infradSensor1 = nullptr;
+	GpioPin ^infradSensor2 = nullptr;
+	GpioPin ^infradSensor3 = nullptr;
+	GpioPin ^outputSensor1 = nullptr;
+	GpioPin ^outputSensor2 = nullptr;
+	GpioPin ^outputSensor3 = nullptr;
+
+
 	inputTransmitter = gpio->OpenPin(gpio4);
 	outputTransmitter = gpio->OpenPin(gpio5);
 	infradSensor1 = gpio->OpenPin(gpio6);
+	infradSensor2 = gpio->OpenPin(gpio12);
+	infradSensor3 = gpio->OpenPin(gpio13);
+	outputSensor1 = gpio->OpenPin(gpio16);
+	outputSensor2 = gpio->OpenPin(gpio18);
+	outputSensor3 = gpio->OpenPin(gpio22);
+
+
 
 	//Testing for gpiocontroller
 	if (gpio == nullptr)
@@ -81,6 +95,12 @@ MainPage::MainPage()
 		inputTransmitter = nullptr;
 		outputTransmitter = nullptr;
 		infradSensor1 = nullptr;
+		infradSensor2 = nullptr;
+		infradSensor3 = nullptr;
+		outputSensor1 = nullptr;
+		outputSensor2 = nullptr;
+		outputSensor3 = nullptr;
+
 		std::cout << "There is no GPIO controller on this device.";
 		return;
 	}
@@ -89,18 +109,39 @@ MainPage::MainPage()
 		inputTransmitter->SetDriveMode(input);
 		outputTransmitter->SetDriveMode(output);
 		infradSensor1->SetDriveMode(input);
+		infradSensor2->SetDriveMode(input);
+		infradSensor3->SetDriveMode(input);
+		outputSensor1->SetDriveMode(output);
+		outputSensor2->SetDriveMode(output);
+		outputSensor3->SetDriveMode(output);
+
 
 		while (1) {
-			if(inputTransmitter->Read() == high)
+			
+			if (inputTransmitter->Read() == high) {
 				outputTransmitter->Write(high);
-			else
-				outputTransmitter->Write(low); 
-
-			if (infradSensor1->Read() == high) {
 				outputTransmitter->Write(high);
 			}
-			else
+			else {
 				outputTransmitter->Write(low);
+				outputTransmitter->Write(low);
+			}
+				
+
+			if (infradSensor1->Read() == high)
+				outputSensor1->Write(high);
+			else
+				outputSensor1->Write(low);
+			if (infradSensor2->Read() == high)
+				outputSensor2->Write(high);
+			else
+				outputSensor2->Write(low);
+			if (infradSensor3->Read() == high)
+				outputSensor3->Write(high);
+			else
+				outputSensor3->Write(low);
+
+
 
 		}
 
