@@ -127,7 +127,7 @@ MainPage::MainPage()
 		infradSensor1->SetDriveMode(input);
 
 		Motor *motorController;
-		motorContoller->setDir(GpioPin* motorOutputPin);
+		motorContoller->setDir(PwmPin* motorOutputPin);
 		currDirection = motorController->checkDir;
 
 		infradSensor2->SetDriveMode(input);

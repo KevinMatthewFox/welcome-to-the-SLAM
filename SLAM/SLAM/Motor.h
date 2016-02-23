@@ -17,19 +17,19 @@
 #define reverse 6
 */
 
-using namespace Windows::Devices::Gpio;
+using namespace Windows::Devices::Pwm;
 
 class Motor
 {
 	public:
-		void goForward(GpioPin ^motorOutputPin);
-		void goLeft(GpioPin ^motorOutputPin);
-		void goRight(GpioPin ^motorOutputPin);
-		void goIdle(GpioPin ^motorOutputPin);
-		void goBrake(GpioPin ^motorOutputPin);
-		void goRotRight(GpioPin ^motorOutputPin);
-		void goRotLeft(GpioPin ^motorOutputPin);
-		void goReverse(GpioPin ^motorOutputPin);
+		void goForward(PwmPin ^motorOutputPin);
+		void goLeft(PwmPin ^motorOutputPin);
+		void goRight(PwmPin ^motorOutputPin);
+		void goIdle(PwmPin ^motorOutputPin);
+		void goBrake(PwmPin ^motorOutputPin);
+		void goRotRight(PwmPin ^motorOutputPin);
+		void goRotLeft(PwmPin ^motorOutputPin);
+		void goReverse(PwmPin ^motorOutputPin);
 		MotorStatus getDir() const;
 		Motor(); //default constructor
 	private:
