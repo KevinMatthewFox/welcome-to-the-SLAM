@@ -12,67 +12,69 @@
 class Motor
 {
 	public:
-		void setDir(MotorStatus);
+		void goForward(GpioPin ^motorOutputPin);
+		void goLeft(GpioPin ^motorOutputPin);
+		void goRight(GpioPin ^motorOutputPin);
+		void goIdle(GpioPin ^motorOutputPin);
+		void goBrake(GpioPin ^motorOutputPin);
+		void goRotRight(GpioPin ^motorOutputPin);	
+		void goRotLeft(GpioPin ^motorOutputPin);
+		void goReverse(GpioPin ^motorOutputPin);
 		MotorStatus getDir() const;
+		Motor(); //default constructor
 	private:
-		MotorStatus status;
+		MotorStatus currDirection;
 };
-
-enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight};
 */
 
-/*
-Motor::Motor()
+void Motor::goForward(GpioPin ^motorOutputPin)
 {
-	this->status = idle;
 	return;
 }
 
-void Motor::setDir(MotorStatus dir)
+void Motor::goLeft(GpioPin ^motorOutputPin)
 {
-	this->status = dir;
-	if (dir == brake)
-	{
-		//set brake
-	}
-	else if (dir == idle)
-	{
-		//both motors off
-	}
-	else if (dir == reverse)
-	{
-		//both motors reverse
-	}
-	else if (dir == forward)
-	{
-		//both motors forward
-	}
-	else if (dir == left)
-	{
-		//right motor forward, left motor off
-	}
-	else if (dir == rotLeft)
-	{
-		//right motor forward, left motor reverse
-	}
-	else if (dir == right)
-	{
-		//right motor off, left motor forward
-	}
-	else if (dir == rotRight)
-	{
-		//right motor reverse, left motor forward
-	}
-	else
-	{
-		status = idle;
-		//idle
-	}
 	return;
 }
+
+void Motor::goRight(GpioPin ^motorOutputPin)
+{
+	return;
+}
+
+void Motor::goIdle(GpioPin ^motorOutputPin)
+{
+	return;
+}
+
+void Motor::goBrake(GpioPin ^motorOutputPin)
+{
+	return;
+}
+void Motor::goRotRight(GpioPin ^motorOutputPin)
+{
+	return;
+}
+
+void Motor::goRotLeft(GpioPin ^motorOutputPin)
+{
+	return;
+}
+
+void Motor::goReverse(GpioPin ^motorOutputPin)
+{
+	return;
+}
+
+Motor::Motor()
+{
+	currDirection = idle;
+	return;
+}
+
+
 
 MotorStatus Motor::getDir() const
 {
-	return status;
+	return currDirection;
 }
-*/

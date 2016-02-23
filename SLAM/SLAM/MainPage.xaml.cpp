@@ -90,9 +90,9 @@ MainPage::MainPage()
 		inputTransmitter->SetDriveMode(input);
 		outputTransmitter->SetDriveMode(output);
 		infradSensor1->SetDriveMode(input);
-		//Motor motor;
-		//motor.setDir(forward);
-		//motor.setDir(right);
+		Motor *motorController;
+		motorContoller->setDir(GpioPin* motorOutputPin);
+		currDirection = motorController->checkDir;
 
 
 		while (1) {

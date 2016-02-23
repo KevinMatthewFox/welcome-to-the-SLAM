@@ -17,27 +17,25 @@
 #define reverse 6
 */
 
-/*
+using namespace Windows::Devices::Gpio;
+
 class Motor
 {
 	public:
-		void setDir(MotorStatus dir);
-		
-		void goForward();
-		void goLeft();
-		void goRight();
-		void goIdle();
-		void goBrake();
-		void goRotRight();
-		void goRotLeft();
-		void goReverse();
-		
+		void goForward(GpioPin ^motorOutputPin);
+		void goLeft(GpioPin ^motorOutputPin);
+		void goRight(GpioPin ^motorOutputPin);
+		void goIdle(GpioPin ^motorOutputPin);
+		void goBrake(GpioPin ^motorOutputPin);
+		void goRotRight(GpioPin ^motorOutputPin);
+		void goRotLeft(GpioPin ^motorOutputPin);
+		void goReverse(GpioPin ^motorOutputPin);
 		MotorStatus getDir() const;
-		Motor();
+		Motor(); //default constructor
 	private:
-		MotorStatus status;
+		MotorStatus currDirection;
 };
 
 enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight};//don't need this if we use the go functions
-*/
+
 
