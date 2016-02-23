@@ -27,41 +27,41 @@ class Motor
 };
 */
 
-void Motor::goForward(GpioPin ^motorOutputPin)
+void Motor::goForward(PwmPin ^motorOutputPin)
 {
 	return;
 }
 
-void Motor::goLeft(GpioPin ^motorOutputPin)
+void Motor::goLeft(PwmPin ^motorOutputPin)
 {
 	return;
 }
 
-void Motor::goRight(GpioPin ^motorOutputPin)
+void Motor::goRight(PwmPin ^motorOutputPin)
 {
 	return;
 }
 
-void Motor::goIdle(GpioPin ^motorOutputPin)
+void Motor::goIdle(PwmPin ^motorOutputPin)
 {
 	return;
 }
 
-void Motor::goBrake(GpioPin ^motorOutputPin)
+void Motor::goBrake(PwmPin ^motorOutputPin)
 {
 	return;
 }
-void Motor::goRotRight(GpioPin ^motorOutputPin)
-{
-	return;
-}
-
-void Motor::goRotLeft(GpioPin ^motorOutputPin)
+void Motor::goRotRight(PwmPin ^motorOutputPin)
 {
 	return;
 }
 
-void Motor::goReverse(GpioPin ^motorOutputPin)
+void Motor::goRotLeft(PwmPin ^motorOutputPin)
+{
+	return;
+}
+
+void Motor::goReverse(PwmPin ^motorOutputPin)
 {
 	return;
 }
@@ -71,7 +71,6 @@ Motor::Motor()
 	currDirection = idle;
 	return;
 }
-
 
 
 MotorStatus Motor::getDir() const
