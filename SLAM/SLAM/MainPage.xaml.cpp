@@ -9,6 +9,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+#include "Motor.h"
 #include <iostream>
 
 using namespace SLAM;
@@ -24,6 +25,7 @@ using namespace Windows::UI::Xaml::Input;
 using namespace Windows::UI::Xaml::Media;
 using namespace Windows::UI::Xaml::Navigation;
 using namespace Windows::Devices::Gpio;
+using namespace Windows::Devices::Pwm;
 using namespace Windows::Devices::Enumeration;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -63,19 +65,29 @@ MainPage::MainPage()
 	//const int gpio23 = 23; //PullDown; header pin 16
 	//const int gpio24 = 24; //PullDown; header pin 18
 	//const int gpio25 = 25; //PullDown; header pin 22
-	//const int gpio26 = 26; //PullDown; header pin 37
-	//const int gpio27 = 27; //PullDown; header pin 13
+	const int gpio26 = 26; //PullDown; header pin 37
+	const int gpio27 = 27; //PullDown; header pin 13
 
 	//Declarations
 	GpioController ^gpio = GpioController::GetDefault();
+	PwmController ^pwm;
+
 	GpioPin ^inputTransmitter = nullptr;
 	GpioPin ^outputTransmitter = nullptr;
 	GpioPin ^infradSensor1 = nullptr;
 	GpioPin ^infradSensor2 = nullptr;
 	GpioPin ^infradSensor3 = nullptr;
-	GpioPin ^outputSensor1 = nullptr;
-	GpioPin ^outputSensor2 = nullptr;
-	GpioPin ^outputSensor3 = nullptr;
+	GpioPin ^output1 = nullptr;
+	GpioPin ^output2 = nullptr;
+	GpioPin ^output3 = nullptr;
+	PwmPin ^motor1 = nullptr;
+	PwmPin ^motor2 = nullptr;
+	
+	motor1 = pwm->OpenPin(gpio26);
+	motor2 = pwm->OpenPin(gpio27);
+	motor1->SetActiveDutyCyclePercentage(90);
+	motor2->SetActiveDutyCyclePercentage(90);
+	
 
 
 	inputTransmitter = gpio->OpenPin(gpio4);
@@ -83,9 +95,13 @@ MainPage::MainPage()
 	infradSensor1 = gpio->OpenPin(gpio6);
 	infradSensor2 = gpio->OpenPin(gpio12);
 	infradSensor3 = gpio->OpenPin(gpio13);
-	outputSensor1 = gpio->OpenPin(gpio16);
-	outputSensor2 = gpio->OpenPin(gpio18);
-	outputSensor3 = gpio->OpenPin(gpio22);
+	output1 = gpio->OpenPin(gpio16);
+	output2 = gpio->OpenPin(gpio18);
+	output3 = gpio->OpenPin(gpio22);
+	
+
+
+
 
 
 
@@ -97,9 +113,9 @@ MainPage::MainPage()
 		infradSensor1 = nullptr;
 		infradSensor2 = nullptr;
 		infradSensor3 = nullptr;
-		outputSensor1 = nullptr;
-		outputSensor2 = nullptr;
-		outputSensor3 = nullptr;
+		output1 = nullptr;
+		output2 = nullptr;
+		output3 = nullptr;
 
 		std::cout << "There is no GPIO controller on this device.";
 		return;
@@ -111,9 +127,10 @@ MainPage::MainPage()
 		infradSensor1->SetDriveMode(input);
 		infradSensor2->SetDriveMode(input);
 		infradSensor3->SetDriveMode(input);
-		outputSensor1->SetDriveMode(output);
-		outputSensor2->SetDriveMode(output);
-		outputSensor3->SetDriveMode(output);
+		output1->SetDriveMode(output);
+		output2->SetDriveMode(output);
+		output3->SetDriveMode(output);
+
 
 
 		while (1) {
@@ -129,17 +146,17 @@ MainPage::MainPage()
 				
 
 			if (infradSensor1->Read() == high)
-				outputSensor1->Write(high);
+				output1->Write(high);
 			else
-				outputSensor1->Write(low);
+				output1->Write(low);
 			if (infradSensor2->Read() == high)
-				outputSensor2->Write(high);
+				output2->Write(high);
 			else
-				outputSensor2->Write(low);
+				output2->Write(low);
 			if (infradSensor3->Read() == high)
-				outputSensor3->Write(high);
+				output3->Write(high);
 			else
-				outputSensor3->Write(low);
+				output3->Write(low);
 
 
 

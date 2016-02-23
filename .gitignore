@@ -6,6 +6,10 @@
 
 /SLAM/ipch/**
 
+/SLAM/x64/**
+
+/SLAM/SLAM/x64/**
+
 /SLAM/SLAM/Generated Files/**
 
 /SLAM/SLAM/ARM/**
