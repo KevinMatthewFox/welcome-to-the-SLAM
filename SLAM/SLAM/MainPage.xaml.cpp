@@ -126,7 +126,8 @@ MainPage::MainPage()
 		outputTransmitter->SetDriveMode(output);
 		infradSensor1->SetDriveMode(input);
 
-		Motor *motorController;
+		Motor *motorController = nullptr;
+		motorController = new Motor();
 		motorController->goIdle(motor1, motor2);
 
 		infradSensor2->SetDriveMode(input);
@@ -175,17 +176,18 @@ MainPage::MainPage()
 	//testPin->Write(high);
 	//testPin->SetDriveMode(output);
 
-	//Close Pins
-	inputTransmitter->Close();// = gpio->OpenPin(gpio4);
-	outputTransmitter->Close();// = gpio->OpenPin(gpio5);
-	infradSensor1->Close(); //= gpio->OpenPin(gpio6);
-	infradSensor2->Close(); //= gpio->OpenPin(gpio12);
-	infradSensor3->Close(); //= gpio->OpenPin(gpio13);
-	output1->Close(); //= gpio->OpenPin(gpio16);
-	output2->Close(); //= gpio->OpenPin(gpio18);
-	output3->Close(); //= gpio->OpenPin(gpio22);
-	motor1->Close(); //= pwm->OpenPin(gpio26);
-	motor2->Close(); //= pwm->OpenPin(gpio27);
+	/*Close Pins
+	~inputTransmitter;// = gpio->OpenPin(gpio4);
+	~outputTransmitter;// = gpio->OpenPin(gpio5);
+	~infradSensor1; //= gpio->OpenPin(gpio6);
+	~infradSensor2; //= gpio->OpenPin(gpio12);
+	~infradSensor3; //= gpio->OpenPin(gpio13);
+	~output1; //= gpio->OpenPin(gpio16);
+	~output2; //= gpio->OpenPin(gpio18);
+	~output3; //= gpio->OpenPin(gpio22);
+	~motor1; //= pwm->OpenPin(gpio26);
+	~motor2; //= pwm->OpenPin(gpio27);
+	*/
 
 	return;
 }

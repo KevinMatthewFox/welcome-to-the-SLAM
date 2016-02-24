@@ -73,7 +73,7 @@ Motor::Motor()
 }
 
 
-MotorStatus Motor::getDir() const
+Motor::MotorStatus Motor::getDir() const
 {
 	return currDirection;
 }
