@@ -42,7 +42,7 @@ void Motor::goRight(PwmPin ^motorOutputPin)
 	return;
 }
 
-void Motor::goIdle(PwmPin ^motorOutputPin)
+void Motor::goIdle(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
 {
 	return;
 }

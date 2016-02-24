@@ -25,7 +25,7 @@ class Motor
 		void goForward(PwmPin ^motorOutputPin);
 		void goLeft(PwmPin ^motorOutputPin);
 		void goRight(PwmPin ^motorOutputPin);
-		void goIdle(PwmPin ^motorOutputPin);
+		void goIdle(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		void goBrake(PwmPin ^motorOutputPin);
 		void goRotRight(PwmPin ^motorOutputPin);
 		void goRotLeft(PwmPin ^motorOutputPin);
