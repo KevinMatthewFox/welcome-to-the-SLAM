@@ -22,14 +22,14 @@ using namespace Windows::Devices::Pwm;
 class Motor
 {
 	public:
-		void goForward(PwmPin ^motorOutputPin);
-		void goLeft(PwmPin ^motorOutputPin);
-		void goRight(PwmPin ^motorOutputPin);
+		void goForward(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
+		void goLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
+		void goRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		void goIdle(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
-		void goBrake(PwmPin ^motorOutputPin);
-		void goRotRight(PwmPin ^motorOutputPin);
-		void goRotLeft(PwmPin ^motorOutputPin);
-		void goReverse(PwmPin ^motorOutputPin);
+		void goBrake(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
+		void goRotRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
+		void goRotLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
+		void goReverse(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		MotorStatus getDir() const;
 		Motor(); //default constructor
 	private:

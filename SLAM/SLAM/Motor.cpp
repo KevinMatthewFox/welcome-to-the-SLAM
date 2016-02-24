@@ -27,17 +27,17 @@ class Motor
 };
 */
 
-void Motor::goForward(PwmPin ^motorOutputPin)
+void Motor::goForward(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
 {
 	return;
 }
 
-void Motor::goLeft(PwmPin ^motorOutputPin)
+void Motor::goLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
 {
 	return;
 }
 
-void Motor::goRight(PwmPin ^motorOutputPin)
+void Motor::goRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
 {
 	return;
 }
@@ -47,21 +47,21 @@ void Motor::goIdle(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
 	return;
 }
 
-void Motor::goBrake(PwmPin ^motorOutputPin)
+void Motor::goBrake(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
 {
 	return;
 }
-void Motor::goRotRight(PwmPin ^motorOutputPin)
-{
-	return;
-}
-
-void Motor::goRotLeft(PwmPin ^motorOutputPin)
+void Motor::goRotRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
 {
 	return;
 }
 
-void Motor::goReverse(PwmPin ^motorOutputPin)
+void Motor::goRotLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+{
+	return;
+}
+
+void Motor::goReverse(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
 {
 	return;
 }
