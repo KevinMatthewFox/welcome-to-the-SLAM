@@ -18,11 +18,12 @@
 */
 
 using namespace Windows::Devices::Pwm;
+//enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight};
 
 class Motor
 {
 	public:
-		enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight };//don't need this if we use the go functions
+		//enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight };//don't need this if we use the go functions
 
 		void goForward(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		void goLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
@@ -32,13 +33,12 @@ class Motor
 		void goRotRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		void goRotLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		void goReverse(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
-		MotorStatus getDir() const;
+		//MotorStatus getDir() const;
 		Motor(); //default constructor
 	private:
-		MotorStatus currDirection;
+		//MotorStatus currDirection;
 };
 
 //enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight };//don't need this if we use the go functions
-
 
 
