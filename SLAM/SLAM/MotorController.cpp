@@ -29,7 +29,7 @@ class MotorController
 };
 */
 
-void MotorController::goForward(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+void MotorController::goForward(Motor ^motorOutput1, Motor ^motorOutput2)
 {
 	//currDirection = forward;
 	return;
