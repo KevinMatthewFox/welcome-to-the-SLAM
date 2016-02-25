@@ -29,49 +29,49 @@ class MotorController
 };
 */
 
-void MotorController::goForward(Motor ^motorOutput1, Motor ^motorOutput2)
+void MotorController::goForward(Motor ^motorRight, Motor ^motorLeft)
 {
 	//currDirection = forward;
 	return;
 }
 
-void MotorController::goLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+void MotorController::goLeft(Motor ^motorRight, Motor ^motorLeft)
 {
 	//currDirection = left;
 	return;
 }
 
-void MotorController::goRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+void MotorController::goRight(Motor ^motorRight, Motor ^motorLeft)
 {
 	//currDirection = right;
 	return;
 }
 
-void MotorController::goIdle(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+void MotorController::goIdle(Motor ^motorRight, Motor ^motorLeft)
 {
 	//currDirection = idle;
 	return;
 }
 
-void MotorController::goBrake(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+void MotorController::goBrake(Motor ^motorRight, Motor ^motorLeft)
 {
 	//currDirection = brake;
 	return;
 }
-void MotorController::goRotRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+void MotorController::goRotRight(Motor ^motorRight, Motor ^motorLeft)
 {
 	//currDirection = rotRight;
 	return;
 }
 
-void MotorController::goRotLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+void MotorController::goRotLeft(Motor ^motorRight, Motor ^motorLeft)
 {
 	
 	//currDirection = rotLeft;
 	return;
 }
 
-void MotorController::goReverse(PwmPin ^motorOutput1, PwmPin ^motorOutput2)
+void MotorController::goReverse(Motor ^motorRight, Motor ^motorLeft)
 {
 	//currDirection = reverse;
 	return;

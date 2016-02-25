@@ -37,7 +37,7 @@ GpioPin ^ENB;
 };
 */
 
-Motor::Motor(const int pwnPinNum, double dutyCycle, const int inA, const int inB, const int enA, const int enB)
+Motor::Motor(const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inA, const int inB, const int enA, const int enB)
 {
 
 }

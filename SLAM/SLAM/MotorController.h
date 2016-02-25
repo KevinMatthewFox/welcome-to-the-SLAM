@@ -25,14 +25,14 @@ class MotorController
 	public:
 		//enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight };//don't need this if we use the go functions
 
-		void goForward(Motor ^motorOutput1, Motor ^motorOutput2);
-		void goLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
-		void goRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
-		void goIdle(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
-		void goBrake(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
-		void goRotRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
-		void goRotLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
-		void goReverse(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
+		void goForward(Motor ^motorRight, Motor ^motorLeft);
+		void goLeft(Motor ^motorRight, Motor ^motorLeft);
+		void goRight(Motor ^motorRight, Motor ^motorLeft);
+		void goIdle(Motor ^motorRight, Motor ^motorLeft);
+		void goBrake(Motor ^motorRight, Motor ^motorLeft);
+		void goRotRight(Motor ^motorRight, Motor ^motorLeft);
+		void goRotLeft(Motor ^motorRight, Motor ^motorLeft);
+		void goReverse(Motor ^motorRight, Motor ^motorLeft);
 		//MotorStatus getDir() const;
 		MotorController(); //default constructor
 	private:
