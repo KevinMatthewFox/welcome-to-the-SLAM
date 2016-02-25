@@ -33,6 +33,8 @@ PwmPin ^motorRight = nullptr;
 };
 */
 
+//USE CONSTRUCTOR
+
 using namespace Windows::Devices::Gpio;
 using namespace Windows::Devices::Pwm;
 
@@ -43,11 +45,11 @@ class Motor
 		Motor(); //default constructor
 		void setDutyCycle(double dutyCycle);
 		double getDutyCycle();
-		void setPWMPin(const int inPwm, PwmController ^pwmController);
-		void setINAPin(const int inINA, GpioController ^gpio);
-		void setINBPin(const int inINB, GpioController ^gpio);
-		void setENAPin(const int inENA, GpioController ^gpio);
-		void setENBPin(const int inENB, GpioController ^gpio);
+		//void setPWMPin(const int inPwm, PwmController ^pwmController);
+		//void setINAPin(const int inINA, GpioController ^gpio);
+		//void setINBPin(const int inINB, GpioController ^gpio);
+		//void setENAPin(const int inENA, GpioController ^gpio);
+		//void setENBPin(const int inENB, GpioController ^gpio);
 		void writeINA(GpioPinValue value);
 		void writeINB(GpioPinValue value);
 		void writeENA(GpioPinValue value);

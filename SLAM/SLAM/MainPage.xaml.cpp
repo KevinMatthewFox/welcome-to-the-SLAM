@@ -11,6 +11,7 @@
 #include "MainPage.xaml.h"
 #include "MotorController.h"
 #include "GpioDefs.h"
+#include "Motor.h"
 #include <iostream>
 
 using namespace SLAM;
@@ -54,7 +55,12 @@ MainPage::MainPage()
 	//motor2 = pwm->OpenPin(GPIO27);
 	//motor1->SetActiveDutyCyclePercentage(90);
 	//motor2->SetActiveDutyCyclePercentage(90);
-	
+
+	MotorController *motorController = nullptr;
+	motorController = new MotorController();
+
+	Motor *motorLeft = nullptr;
+	Motor *motorRight = nullptr;
 
 
 	inputTransmitter = gpio->OpenPin(GPIO4);
@@ -99,8 +105,6 @@ MainPage::MainPage()
 		outputTransmitter->SetDriveMode(OUTPUT);
 		infradSensor1->SetDriveMode(INPUT);
 
-		MotorController *motorController = nullptr;
-		motorController = new MotorController();
 		//motorController->goIdle(motor1, motor2);
 
 		infradSensor2->SetDriveMode(INPUT);
