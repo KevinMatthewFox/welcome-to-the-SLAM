@@ -1,9 +1,9 @@
 #pragma once
 
 //
-// File: Motor.h
+// File: MotorController.h
 // Author: Kevin Fox
-// Header file for Motor class
+// Header file for MotorController class
 //
 
 //USING ENUM INSTEAD OF #define
@@ -20,7 +20,7 @@
 using namespace Windows::Devices::Pwm;
 //enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight};
 
-class Motor
+class MotorController
 {
 	public:
 		//enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight };//don't need this if we use the go functions
@@ -34,7 +34,7 @@ class Motor
 		void goRotLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		void goReverse(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		//MotorStatus getDir() const;
-		Motor(); //default constructor
+		MotorController(); //default constructor
 	private:
 		//MotorStatus currDirection;
 };
