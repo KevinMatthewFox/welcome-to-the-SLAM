@@ -29,75 +29,99 @@ void writeENB(GpioPinValue value);
 private:
 double currDutyCycle;
 PwmPin ^pwm;
-GpioPin ^INA;
-GpioPin ^INB;
-GpioPin ^ENA;
-GpioPin ^ENB;
+GpioPin ^inA;
+GpioPin ^inB;
+GpioPin ^enA;
+GpioPin ^enB;
 
 };
 */
 
-Motor::Motor(const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inA, const int inB, const int enA, const int enB)
+Motor::Motor(const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin)
 {
+	currDutyCycle = dutyCycle;
+	pwm = nullptr;
+	pwm = pwmController->OpenPin(pwnPinNum);
+	pwm->SetActiveDutyCyclePercentage(currDutyCycle);
+	inA = nullptr;
+	inB = nullptr;
+	enA = nullptr;
+	enB = nullptr;
+	inA = gpio->OpenPin(inAPin);
+	inB = gpio->OpenPin(inBPin);
+	enA = gpio->OpenPin(enAPin);
+	enB = gpio->OpenPin(enBPin);
+	inA->SetDriveMode(OUTPUT);
+	inB->SetDriveMode(OUTPUT);
+	enA->SetDriveMode(OUTPUT);
+	enB->SetDriveMode(OUTPUT);
+
 	return;
 }
 
 Motor::Motor() //default constructor
 {
+	pwm = nullptr;
+	inA = nullptr;
+	inB = nullptr;
+	enA = nullptr;
+	enB = nullptr;
 	return;
 }
 
-void setDutyCycle(double dutyCycle, PwmController ^pwm)
+void Motor::setDutyCycle(double dutyCycle)
+{
+	currDutyCycle = dutyCycle;
+	pwm->SetActiveDutyCyclePercentage(currDutyCycle);
+	return;
+}
+
+double Motor::getDutyCycle()
 {
 	return;
 }
 
-double getDutyCycle()
+void Motor::setPWMPin(const int inPwm, PwmController ^pwmController)
 {
 	return;
 }
 
-void setPWMPin(const int inPwm, PwmController ^pwmController)
+void Motor::setINAPin(const int inINA, GpioController ^gpio)
 {
 	return;
 }
 
-void setINAPin(const int inINA, GpioController ^gpio)
+void Motor::setINBPin(const int inINB, GpioController ^gpio)
 {
 	return;
 }
 
-void setINBPin(const int inINB, GpioController ^gpio)
+void Motor::setENAPin(const int inENA, GpioController ^gpio)
 {
 	return;
 }
 
-void setENAPin(const int inENA, GpioController ^gpio)
+void Motor::setENBPin(const int inENB, GpioController ^gpio)
 {
 	return;
 }
 
-void setENBPin(const int inENB, GpioController ^gpio)
+void Motor::writeINA(GpioPinValue value)
 {
 	return;
 }
 
-void writeINA(GpioPinValue value)
+void Motor::writeINB(GpioPinValue value)
 {
 	return;
 }
 
-void writeINB(GpioPinValue value)
+void Motor::writeENA(GpioPinValue value)
 {
 	return;
 }
 
-void writeENA(GpioPinValue value)
-{
-	return;
-}
-
-void writeENB(GpioPinValue value)
+void Motor::writeENB(GpioPinValue value)
 {
 	return;
 }

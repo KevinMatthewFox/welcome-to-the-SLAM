@@ -47,13 +47,13 @@ MainPage::MainPage()
 	GpioPin ^output1 = nullptr;
 	GpioPin ^output2 = nullptr;
 	GpioPin ^output3 = nullptr;
-	PwmPin ^motor1 = nullptr;
-	PwmPin ^motor2 = nullptr;
+	//PwmPin ^motor1 = nullptr;
+	//PwmPin ^motor2 = nullptr;
 	
-	motor1 = pwm->OpenPin(GPIO26);
-	motor2 = pwm->OpenPin(GPIO27);
-	motor1->SetActiveDutyCyclePercentage(90);
-	motor2->SetActiveDutyCyclePercentage(90);
+	//motor1 = pwm->OpenPin(GPIO26);
+	//motor2 = pwm->OpenPin(GPIO27);
+	//motor1->SetActiveDutyCyclePercentage(90);
+	//motor2->SetActiveDutyCyclePercentage(90);
 	
 
 
@@ -87,6 +87,12 @@ MainPage::MainPage()
 		std::cout << "There is no GPIO controller on this device.";
 		return;
 	}
+	/*
+	else if (pwm == nullptr)
+	{
+		std::cout << "There is no PWM controller on this device";
+	}
+	*/
 	else
 	{
 		inputTransmitter->SetDriveMode(INPUT);
@@ -95,7 +101,7 @@ MainPage::MainPage()
 
 		MotorController *motorController = nullptr;
 		motorController = new MotorController();
-		motorController->goIdle(motor1, motor2);
+		//motorController->goIdle(motor1, motor2);
 
 		infradSensor2->SetDriveMode(INPUT);
 		infradSensor3->SetDriveMode(INPUT);

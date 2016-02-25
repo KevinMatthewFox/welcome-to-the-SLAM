@@ -17,8 +17,6 @@
 #define reverse 6
 */
 
-#include "Motor.h"
-
 using namespace Windows::Devices::Pwm;
 //enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight};
 
@@ -27,14 +25,14 @@ class MotorController
 	public:
 		//enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight };//don't need this if we use the go functions
 
-		void goForward(Motor ^motorRight, Motor ^motorLeft);
-		void goLeft(Motor ^motorRight, Motor ^motorLeft);
-		void goRight(Motor ^motorRight, Motor ^motorLeft);
-		void goIdle(Motor ^motorRight, Motor ^motorLeft);
-		void goBrake(Motor ^motorRight, Motor ^motorLeft);
-		void goRotRight(Motor ^motorRight, Motor ^motorLeft);
-		void goRotLeft(Motor ^motorRight, Motor ^motorLeft);
-		void goReverse(Motor ^motorRight, Motor ^motorLeft);
+		void goForward(Motor *motorRight, Motor *motorLeft);
+		void goLeft(Motor *motorRight, Motor *motorLeft);
+		void goRight(Motor *motorRight, Motor *motorLeft);
+		void goIdle(Motor *motorRight, Motor *motorLeft);
+		void goBrake(Motor *motorRight, Motor *motorLeft);
+		void goRotRight(Motor *motorRight, Motor *motorLeft);
+		void goRotLeft(Motor *motorRight, Motor *motorLeft);
+		void goReverse(Motor *motorRight, Motor *motorLeft);
 		//MotorStatus getDir() const;
 		MotorController(); //default constructor
 	private:
