@@ -25,7 +25,7 @@ class MotorController
 	public:
 		//enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight };//don't need this if we use the go functions
 
-		void goForward(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
+		void goForward(Motor ^motorOutput1, Motor ^motorOutput2);
 		void goLeft(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		void goRight(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
 		void goIdle(PwmPin ^motorOutput1, PwmPin ^motorOutput2);
@@ -38,6 +38,7 @@ class MotorController
 	private:
 		//MotorStatus currDirection;
 };
+
 
 //enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight };//don't need this if we use the go functions
 

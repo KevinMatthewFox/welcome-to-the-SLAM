@@ -32,11 +32,23 @@ PwmPin ^motorRight = nullptr;
 
 };
 */
+
+using namespace Windows::Devices::Gpio;
+using namespace Windows::Devices::Pwm;
+
 class Motor
 {
 	public:
 		Motor(const int pwnPinNum, const int inA, const int inB, const int enA, const int enB);
 		Motor(); //default constructor
+		void setPWMPin();
+
 	private:
+		double currDutyCycle;
+		PwmPin ^pwm;
+		GpioPin ^INA;
+		GpioPin ^INB;
+		GpioPin ^ENA;
+		GpioPin ^ENB;
 
 };

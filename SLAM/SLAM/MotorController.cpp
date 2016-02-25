@@ -6,6 +6,8 @@
 
 #include "pch.h"
 #include "MotorController.h"
+#include "GpioDefs.h"
+#include "Motor.h"
 
 //CLASS DEFINITION
 /*
