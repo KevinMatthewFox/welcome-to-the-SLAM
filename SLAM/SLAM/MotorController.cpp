@@ -1,5 +1,5 @@
 //
-// File: Motor.cpp
+// File: MotorController.cpp
 // Author: Kevin Fox
 // Implementation for MotorController class
 //
