@@ -39,10 +39,65 @@ GpioPin ^ENB;
 
 Motor::Motor(const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inA, const int inB, const int enA, const int enB)
 {
-
+	return;
 }
 
 Motor::Motor() //default constructor
 {
+	return;
+}
 
+void setDutyCycle(double dutyCycle, PwmController ^pwm)
+{
+	return;
+}
+
+double getDutyCycle()
+{
+	return;
+}
+
+void setPWMPin(const int inPwm, PwmController ^pwmController)
+{
+	return;
+}
+
+void setINAPin(const int inINA, GpioController ^gpio)
+{
+	return;
+}
+
+void setINBPin(const int inINB, GpioController ^gpio)
+{
+	return;
+}
+
+void setENAPin(const int inENA, GpioController ^gpio)
+{
+	return;
+}
+
+void setENBPin(const int inENB, GpioController ^gpio)
+{
+	return;
+}
+
+void writeINA(GpioPinValue value)
+{
+	return;
+}
+
+void writeINB(GpioPinValue value)
+{
+	return;
+}
+
+void writeENA(GpioPinValue value)
+{
+	return;
+}
+
+void writeENB(GpioPinValue value)
+{
+	return;
 }

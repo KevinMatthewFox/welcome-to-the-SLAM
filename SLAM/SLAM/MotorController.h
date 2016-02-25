@@ -17,6 +17,8 @@
 #define reverse 6
 */
 
+#include "Motor.h"
+
 using namespace Windows::Devices::Pwm;
 //enum MotorStatus { brake, idle, reverse, forward, left, rotLeft, right, rotRight};
 
