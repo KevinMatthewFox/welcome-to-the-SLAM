@@ -31,7 +31,10 @@ class MotorController
 
 void MotorController::goForward(Motor *motorRight, Motor *motorLeft)
 {
-	//currDirection = forward;
+	
+	motorLeft->writeENA();
+	motorLeft->writeENB(HIGH);
+
 	return;
 }
 

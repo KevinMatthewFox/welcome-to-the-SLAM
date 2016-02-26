@@ -61,6 +61,11 @@ MainPage::MainPage()
 
 	Motor *motorLeft = nullptr;
 	Motor *motorRight = nullptr;
+	motorLeft = new Motor(/*stuff*/);
+	motorRight = new Motor(/*stuff*/);
+	motorController->goForward(motorLeft,motorRight);
+	motorRight->setDutyCycle(100);
+
 
 
 	inputTransmitter = gpio->OpenPin(GPIO4);
