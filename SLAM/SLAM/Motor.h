@@ -41,7 +41,7 @@ using namespace Windows::Devices::Pwm;
 class Motor
 {
 	public:
-		Motor(const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin);
+		Motor(const int pwnPinNum, double dutyCycle,  const int inAPin, const int inBPin, const int enAPin, const int enBPin);
 		Motor(); //default constructor
 		void setDutyCycle(double dutyCycle);
 		double getDutyCycle();

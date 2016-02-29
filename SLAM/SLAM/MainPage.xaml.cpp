@@ -61,12 +61,11 @@ MainPage::MainPage()
 
 	Motor *motorLeft = nullptr;
 	Motor *motorRight = nullptr;
-	motorLeft = new Motor(/*stuff*/);
-	motorRight = new Motor(/*stuff*/);
+	motorLeft = new Motor(20,100.0,16,18,24,25);   //const int pwnPinNum, double dutyCycle, const int inAPin, const int inBPin, const int enAPin, const int enBPin
+	motorRight = new Motor(20,100,19,22,26,27);
+
 	motorController->goForward(motorLeft,motorRight);
-	motorRight->setDutyCycle(100);
-
-
+	
 
 	inputTransmitter = gpio->OpenPin(GPIO4);
 	outputTransmitter = gpio->OpenPin(GPIO5);
@@ -77,10 +76,6 @@ MainPage::MainPage()
 	output2 = gpio->OpenPin(GPIO18);
 	output3 = gpio->OpenPin(GPIO22);
 	
-
-
-
-
 
 
 	//Testing for gpiocontroller

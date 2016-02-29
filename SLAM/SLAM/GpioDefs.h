@@ -7,21 +7,21 @@
 
 #define GPIO4 4 //Pin for the transmitter
 #define GPIO5 5 //Receiver
-#define GPIO6 6 //Infrad sensor1 input
+#define GPIO6 6 //INFRAD SENSOR1 INPUT
 #define GPIO12 12 //INFRAD SENSOR2 INPUT
 #define GPIO13 13 //INFRAD SENSOR3 INPUT
-#define GPIO16 16 //INFRAD SENSOR1 OUTPUT
-#define GPIO18 18 //INFRAD SENSOR2 OUTPUT
-#define GPIO22 22 //INFRAD SENSOR3 OUTPUT
-#define GPIO19 19 //PULLDOWN; HEADER PIN 35
-#define GPIO20 20 //PULLDOWN; HEADER PIN 38
-#define GPIO21 21 //PULLDOWN; HEADER PIN 40
-#define GPIO22 22 //PULLDOWN; HEADER PIN 15
-#define GPIO23 23 //PULLDOWN; HEADER PIN 16
-#define GPIO24 24 //PULLDOWN; HEADER PIN 18
-#define GPIO25 25 //PULLDOWN; HEADER PIN 22
-#define GPIO26 26 //PULLDOWN; HEADER PIN 37
-#define GPIO27 27 //PullDown; header pin 13
+#define GPIO16 16 //INA Left
+#define GPIO18 18 //INB Left
+#define GPIO19 19 //INA Right
+#define GPIO22 22 //INB Right
+#define GPIO20 20 //PWM
+#define GPIO21 21 //INFRAD SENSOR1 OUTPUT
+#define GPIO22 22 //INFRAD SENSOR2 OUTPUT
+#define GPIO23 23 //INFRAD SENSOR3 OUTPUT
+#define GPIO24 24 //ENA Left
+#define GPIO25 25 //ENB Left
+#define GPIO26 26 //ENA Right
+#define GPIO27 27 //ENB Right
 
 #define HIGH GpioPinValue::High //1
 #define LOW GpioPinValue::Low //0
