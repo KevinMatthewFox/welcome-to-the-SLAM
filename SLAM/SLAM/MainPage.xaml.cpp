@@ -56,17 +56,18 @@ MainPage::MainPage()
 	//motor1->SetActiveDutyCyclePercentage(90);
 	//motor2->SetActiveDutyCyclePercentage(90);
 
-	//Initialization -- Motor Controller
-	MotorController *motorController = nullptr;
-	motorController = new MotorController();
-
 	//Initialization -- Motors
 	Motor *motorLeft = nullptr;
 	Motor *motorRight = nullptr;
 	motorLeft = new Motor(20, pwm, 100.0, gpio, 16, 18, 24, 25);   //const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inA, const int inB, const int enA, const int enB
 	motorRight = new Motor(20, pwm, 100.0, gpio, 19 ,22, 26, 27);
 
-	motorController->goForward(motorLeft, motorRight);
+	//Initialization -- Motor Controller -- this needs to come after the motor initialization because we feed two motors into the controller
+	MotorController *motorController = nullptr;
+	motorController = new MotorController(motorLeft, motorRight);
+
+	//Testing the motor
+	motorController->goForward();
 	
 	//Initializations -- Transmitters, Sensors
 	inputTransmitter = gpio->OpenPin(GPIO4);

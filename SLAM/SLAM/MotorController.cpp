@@ -9,7 +9,7 @@
 #include "GpioDefs.h"
 #include "Motor.h"
 
-void MotorController::goForward(Motor *motorRight, Motor *motorLeft)
+void MotorController::goForward()
 {
 	
 	motorLeft->writeENA(HIGH);
@@ -26,7 +26,7 @@ void MotorController::goForward(Motor *motorRight, Motor *motorLeft)
 	return;
 }
 
-void MotorController::goLeft(Motor *motorRight, Motor *motorLeft)
+void MotorController::goLeft()
 {
 	motorLeft->writeENA(LOW);
 	motorLeft->writeENB(LOW);
@@ -41,7 +41,7 @@ void MotorController::goLeft(Motor *motorRight, Motor *motorLeft)
 	return;
 }
 
-void MotorController::goRight(Motor *motorRight, Motor *motorLeft)
+void MotorController::goRight()
 {
 	motorRight->writeENA(LOW);
 	motorRight->writeENB(LOW);
@@ -56,7 +56,7 @@ void MotorController::goRight(Motor *motorRight, Motor *motorLeft)
 	return;
 }
 
-void MotorController::goIdle(Motor *motorRight, Motor *motorLeft)
+void MotorController::goIdle()
 {
 	motorLeft->writeENA(LOW);
 	motorLeft->writeENB(LOW);
@@ -71,13 +71,13 @@ void MotorController::goIdle(Motor *motorRight, Motor *motorLeft)
 	return;
 }
 
-//void MotorController::goBrake(Motor *motorRight, Motor *motorLeft)
+//void MotorController::goBrake()
 //{
 //	//currDirection = brake;
 //	return;
 //}
 
-void MotorController::goRotRight(Motor *motorRight, Motor *motorLeft)
+void MotorController::goRotRight()
 {
 	motorRight->writeENA(HIGH);                               //Right conterclockwise
 	motorRight->writeENB(HIGH);
@@ -93,7 +93,7 @@ void MotorController::goRotRight(Motor *motorRight, Motor *motorLeft)
 	return;
 }
 
-void MotorController::goRotLeft(Motor *motorRight, Motor *motorLeft)
+void MotorController::goRotLeft()
 {
 	
 	motorRight->writeENA(HIGH);                              //Right clockwise
@@ -110,7 +110,7 @@ void MotorController::goRotLeft(Motor *motorRight, Motor *motorLeft)
 	return;
 }
 
-void MotorController::goReverse(Motor *motorRight, Motor *motorLeft)
+void MotorController::goReverse()
 {
 	motorRight->writeENA(HIGH);                              //Right conterclockwise
 	motorRight->writeENB(HIGH);
@@ -125,9 +125,11 @@ void MotorController::goReverse(Motor *motorRight, Motor *motorLeft)
 	return;
 }
 
-MotorController::MotorController()
+MotorController::MotorController(Motor *leftMotor, Motor *rightMotor)
 {
 	//currDirection = idle;
+	motorLeft = leftMotor;
+	motorRight = rightMotor;
 	return;
 }
 
