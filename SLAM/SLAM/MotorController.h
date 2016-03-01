@@ -32,8 +32,8 @@ class MotorController
 		void goRight();
 		void goIdle();
 		//void goBrake();
-		void goRotRight();
-		void goRotLeft();
+		void goRotRight(); //rotate right
+		void goRotLeft(); //rotate left
 		void goReverse();
 		//void setDutyCycle(double leftDutyCycle, double rightDutyCycle);
 		//MotorStatus getDir() const;
