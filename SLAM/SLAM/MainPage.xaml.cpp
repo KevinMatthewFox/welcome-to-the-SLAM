@@ -64,7 +64,7 @@ MainPage::MainPage()
 
 	//Initialization -- Motor Controller -- this needs to come after the motor initialization because we feed two motors into the controller
 	MotorController *motorController = nullptr;
-	motorController = new MotorController(motorLeft, motorRight);
+	motorController = new MotorController(motorLeft, motorRight); //THIS IS COPYING THE POINTERS
 
 	//Testing the motor
 	motorController->goForward();
