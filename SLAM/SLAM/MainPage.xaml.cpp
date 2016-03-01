@@ -36,10 +36,11 @@ MainPage::MainPage()
 {
 	InitializeComponent();
 
-	//Declarations
+	//Declarations -- Controllers
 	GpioController ^gpio = GpioController::GetDefault();
 	PwmController ^pwm;
 
+	//Declarations -- Pins
 	GpioPin ^inputTransmitter = nullptr;
 	GpioPin ^outputTransmitter = nullptr;
 	GpioPin ^infradSensor1 = nullptr;
@@ -50,23 +51,24 @@ MainPage::MainPage()
 	GpioPin ^output3 = nullptr;
 	//PwmPin ^motor1 = nullptr;
 	//PwmPin ^motor2 = nullptr;
-	
 	//motor1 = pwm->OpenPin(GPIO26);
 	//motor2 = pwm->OpenPin(GPIO27);
 	//motor1->SetActiveDutyCyclePercentage(90);
 	//motor2->SetActiveDutyCyclePercentage(90);
 
+	//Initialization -- Motor Controller
 	MotorController *motorController = nullptr;
 	motorController = new MotorController();
 
+	//Initialization -- Motors
 	Motor *motorLeft = nullptr;
 	Motor *motorRight = nullptr;
-	motorLeft = new Motor(20,100.0,16,18,24,25);   //const int pwnPinNum, double dutyCycle, const int inAPin, const int inBPin, const int enAPin, const int enBPin
-	motorRight = new Motor(20,100,19,22,26,27);
+	motorLeft = new Motor(20, pwm, 100.0, gpio, 16, 18, 24, 25);   //const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inA, const int inB, const int enA, const int enB
+	motorRight = new Motor(20, pwm, 100.0, gpio, 19 ,22, 26, 27);
 
-	motorController->goForward(motorLeft,motorRight);
+	motorController->goForward(motorLeft, motorRight);
 	
-
+	//Initializations -- Transmitters, Sensors
 	inputTransmitter = gpio->OpenPin(GPIO4);
 	outputTransmitter = gpio->OpenPin(GPIO5);
 	infradSensor1 = gpio->OpenPin(GPIO6);
@@ -104,16 +106,11 @@ MainPage::MainPage()
 		inputTransmitter->SetDriveMode(INPUT);
 		outputTransmitter->SetDriveMode(OUTPUT);
 		infradSensor1->SetDriveMode(INPUT);
-
-		//motorController->goIdle(motor1, motor2);
-
 		infradSensor2->SetDriveMode(INPUT);
 		infradSensor3->SetDriveMode(INPUT);
 		output1->SetDriveMode(OUTPUT);
 		output2->SetDriveMode(OUTPUT);
 		output3->SetDriveMode(OUTPUT);
-
-
 
 
 		while (1) {
@@ -164,6 +161,8 @@ MainPage::MainPage()
 	~motor1; //= pwm->OpenPin(gpio26);
 	~motor2; //= pwm->OpenPin(gpio27);
 	*/
+
+	//NEED TO DELETE DYNAMICALLY ALLOCATED OBJECTS TO AVOID MEMORY LEAK
 
 	return;
 }
