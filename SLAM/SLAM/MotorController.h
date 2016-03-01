@@ -35,6 +35,7 @@ class MotorController
 		void goRotRight();
 		void goRotLeft();
 		void goReverse();
+		//void setDutyCycle(double leftDutyCycle, double rightDutyCycle);
 		//MotorStatus getDir() const;
 		MotorController(Motor *leftMotor, Motor *rightMotor); //default constructor
 	private:
