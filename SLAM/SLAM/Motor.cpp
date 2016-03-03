@@ -37,12 +37,12 @@ GpioPin ^enB;
 };
 */
 
-Motor::Motor(const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin)
+Motor::Motor(const int pwnPinNum, /*PwmController ^pwmController, double dutyCycle,*/ GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin)
 {
-	currDutyCycle = dutyCycle;
+	//currDutyCycle = dutyCycle;
 	pwm = nullptr;
-	pwm = pwmController->OpenPin(pwnPinNum);
-	pwm->SetActiveDutyCyclePercentage(currDutyCycle);
+	pwm = gpio->OpenPin(pwnPinNum);
+	//pwm->SetActiveDutyCyclePercentage(currDutyCycle);
 	inA = nullptr;
 	inB = nullptr;
 	enA = nullptr;
@@ -55,6 +55,8 @@ Motor::Motor(const int pwnPinNum, PwmController ^pwmController, double dutyCycle
 	inB->SetDriveMode(OUTPUT);
 	enA->SetDriveMode(OUTPUT);
 	enB->SetDriveMode(OUTPUT);
+	pwm->SetDriveMode(OUTPUT);
+	pwm->Write(HIGH);
 
 	return;
 }
@@ -69,17 +71,17 @@ Motor::Motor(const int pwnPinNum, PwmController ^pwmController, double dutyCycle
 //	return;
 //}
 //
-void Motor::setDutyCycle(double dutyCycle)
-{
-	currDutyCycle = dutyCycle;
-	pwm->SetActiveDutyCyclePercentage(currDutyCycle);
-	return;
-}
-
-double Motor::getDutyCycle()
-{
-	return currDutyCycle;
-}
+//void Motor::setDutyCycle(double dutyCycle)
+//{
+//	currDutyCycle = dutyCycle;
+//	pwm->SetActiveDutyCyclePercentage(currDutyCycle);
+//	return;
+//}
+//
+//double Motor::getDutyCycle()
+//{
+//	return currDutyCycle;
+//}
 
 //void Motor::setPWMPin(const int inPwm, PwmController ^pwmController)
 //{
