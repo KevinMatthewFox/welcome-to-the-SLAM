@@ -37,6 +37,8 @@ GpioPin ^enB;
 };
 */
 
+//using namespace Windows::Devices::Gpio;
+
 Motor::Motor(const int pwnPinNum, /*PwmController ^pwmController, double dutyCycle,*/ GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin)
 {
 	//currDutyCycle = dutyCycle;
@@ -61,6 +63,38 @@ Motor::Motor(const int pwnPinNum, /*PwmController ^pwmController, double dutyCyc
 	return;
 }
 
+Motor::~Motor()
+{
+	enA->Close();
+	enB->Close();
+	inA->Close();
+	inB->Close();
+	pwm->Close();
+	return;
+}
+//Motor(GpioPin ^firstPWMPin, /*PwmController ^pwmController, double dutyCycle,*/ GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin)
+//{
+//	//currDutyCycle = dutyCycle;
+//	pwm = nullptr;
+//	pwm = firstPWMPin;
+//	//pwm->SetActiveDutyCyclePercentage(currDutyCycle);
+//	inA = nullptr;
+//	inB = nullptr;
+//	enA = nullptr;
+//	enB = nullptr;
+//	inA = gpio->OpenPin(inAPin);
+//	inB = gpio->OpenPin(inBPin);
+//	enA = gpio->OpenPin(enAPin);
+//	enB = gpio->OpenPin(enBPin);
+//	inA->SetDriveMode(OUTPUT);
+//	inB->SetDriveMode(OUTPUT);
+//	enA->SetDriveMode(OUTPUT);
+//	enB->SetDriveMode(OUTPUT);
+//	pwm->SetDriveMode(OUTPUT);
+//	pwm->Write(HIGH);
+//
+//	return;
+//}
 //Motor::Motor() //default constructor
 //{
 //	pwm = nullptr;

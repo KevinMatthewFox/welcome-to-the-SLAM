@@ -42,6 +42,7 @@ class Motor
 {
 	public:
 		Motor(const int pwnPinNum, /*PwmController ^pwmController, double dutyCycle,*/ GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin);
+		//Motor(GpioPin ^firstPWMPin, /*PwmController ^pwmController, double dutyCycle,*/ GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin);
 		//Motor(); //default constructor
 		/*void setDutyCycle(double dutyCycle);
 		double getDutyCycle();*/
@@ -54,9 +55,10 @@ class Motor
 		void writeINB(GpioPinValue value);
 		void writeENA(GpioPinValue value);
 		void writeENB(GpioPinValue value);
+		~Motor();
 
 	private:
-		double currDutyCycle;
+		//double currDutyCycle;
 		GpioPin ^pwm;
 		GpioPin ^inA;
 		GpioPin ^inB;

@@ -60,8 +60,8 @@ MainPage::MainPage()
 	//Initialization -- Motors
 	Motor *motorLeft = nullptr;
 	Motor *motorRight = nullptr;
-	motorLeft = new Motor(20, /*pwm, 100.0,*/ gpio, 16, 18, 24, 25);   //const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inA, const int inB, const int enA, const int enB
-	motorRight = new Motor(GPIO4, /*pwm, 100.0,*/ gpio, 19 ,22, 26, 27);
+	motorLeft = new Motor(GPIO20, /*pwm, 100.0,*/ gpio, GPIO16, GPIO18, GPIO24, GPIO25);   //const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inA, const int inB, const int enA, const int enB
+	motorRight = new Motor(GPIO4, /*pwm, 100.0,*/ gpio, GPIO19 , GPIO22, GPIO26, GPIO27);
 
 	//Initialization -- Motor Controller -- this needs to come after the motor initialization because we feed two motors into the controller
 	MotorController *motorController = nullptr;
@@ -153,6 +153,7 @@ MainPage::MainPage()
 	//testPin = gpio->OpenPin(gpio4); //power-on the pin
 	//testPin->Write(high);
 	//testPin->SetDriveMode(output);
+
 
 	/*Close Pins
 	~inputTransmitter;// = gpio->OpenPin(gpio4);
