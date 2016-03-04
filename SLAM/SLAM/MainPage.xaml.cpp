@@ -3,7 +3,7 @@
 // Implementation of the MainPage class.
 //
 // Author: ENGR 498 - Team 15017
-//		Kevin Fox
+//		Kevin Fox, Jiaxiang Wang
 // Description: SLAM, baby
 //
 
@@ -12,6 +12,7 @@
 #include "MotorController.h"
 #include "GpioDefs.h"
 #include "Motor.h"
+#include "MotorTest.h"
 #include <iostream>
 
 using namespace SLAM;
@@ -29,6 +30,8 @@ using namespace Windows::UI::Xaml::Navigation;
 using namespace Windows::Devices::Gpio;
 using namespace Windows::Devices::Pwm;
 using namespace Windows::Devices::Enumeration;
+
+//using namespace System;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -61,27 +64,23 @@ MainPage::MainPage()
 	Motor *motorLeft = nullptr;
 	Motor *motorRight = nullptr;
 	motorLeft = new Motor(GPIO20, /*pwm, 100.0,*/ gpio, GPIO16, GPIO18, GPIO24, GPIO25);   //const int pwnPinNum, PwmController ^pwmController, double dutyCycle, GpioController ^gpio, const int inA, const int inB, const int enA, const int enB
-	motorRight = new Motor(GPIO4, /*pwm, 100.0,*/ gpio, GPIO19 , GPIO22, GPIO26, GPIO27);
+	motorRight = new Motor(GPIO21, /*pwm, 100.0,*/ gpio, GPIO19 , GPIO22, GPIO26, GPIO27);
 
 	//Initialization -- Motor Controller -- this needs to come after the motor initialization because we feed two motors into the controller
 	MotorController *motorController = nullptr;
 	motorController = new MotorController(motorLeft, motorRight); //THIS IS COPYING THE POINTERS
 
 	//Testing the motor
-	motorController->goForward();
-	while (1) 
-	{
-	}
 	
 	//Initializations -- Transmitters, Sensors
 	inputTransmitter = gpio->OpenPin(GPIO4);
-	outputTransmitter = gpio->OpenPin(GPIO5);
-	infradSensor1 = gpio->OpenPin(GPIO6);
-	infradSensor2 = gpio->OpenPin(GPIO12);
-	infradSensor3 = gpio->OpenPin(GPIO13);
-	output1 = gpio->OpenPin(GPIO16);
-	output2 = gpio->OpenPin(GPIO18);
-	output3 = gpio->OpenPin(GPIO22);
+	//outputTransmitter = gpio->OpenPin(GPIO5);
+	//infradSensor1 = gpio->OpenPin(GPIO6);
+	//infradSensor2 = gpio->OpenPin(GPIO12);
+	//infradSensor3 = gpio->OpenPin(GPIO13);
+	//output1 = gpio->OpenPin(GPIO16);
+	//output2 = gpio->OpenPin(GPIO18);
+	//output3 = gpio->OpenPin(GPIO22);
 	
 
 
@@ -108,52 +107,61 @@ MainPage::MainPage()
 	*/
 	else
 	{
+		//if (inputTransmitter->IsDriveModeSupported(INPUTPU))
+		//{
+		//	inputTransmitter->SetDriveMode(INPUTPU);
+		//}
+		//else
+		//{
+		//	inputTransmitter->SetDriveMode(INPUT);
+		//}
 		inputTransmitter->SetDriveMode(INPUT);
-		outputTransmitter->SetDriveMode(OUTPUT);
-		infradSensor1->SetDriveMode(INPUT);
-		infradSensor2->SetDriveMode(INPUT);
-		infradSensor3->SetDriveMode(INPUT);
-		output1->SetDriveMode(OUTPUT);
-		output2->SetDriveMode(OUTPUT);
-		output3->SetDriveMode(OUTPUT);
+		//outputTransmitter->SetDriveMode(OUTPUT);
+		//infradSensor1->SetDriveMode(INPUT);
+		//infradSensor2->SetDriveMode(INPUT);
+		//infradSensor3->SetDriveMode(INPUT);
+		//output1->SetDriveMode(OUTPUT);
+		//output2->SetDriveMode(OUTPUT);
+		//output3->SetDriveMode(OUTPUT);
 
+		motorTest(motorController, inputTransmitter);
+		//TimeSpan inputDebounce;
+		//inputDebounce.Duration = 50000;
 
-		while (1) {
-			
-			//Transmitter code
-			if (inputTransmitter->Read() == HIGH) {
-				outputTransmitter->Write(HIGH);
-				outputTransmitter->Write(HIGH);
-			}
-			else {
-				outputTransmitter->Write(LOW);
-				outputTransmitter->Write(LOW);
-			}
-				
-			//Infrared sensor code
-			if (infradSensor1->Read() == HIGH)
-				output1->Write(HIGH);
-			else
-				output1->Write(LOW);
-			if (infradSensor2->Read() == HIGH)
-				output2->Write(HIGH);
-			else
-				output2->Write(LOW);
-			if (infradSensor3->Read() == HIGH)
-				output3->Write(HIGH);
-			else
-				output3->Write(LOW);
+		//inputTransmitter->DebounceTimeout = inputDebounce;
 
-		}
+		
+		//while (1) {
+		//	
+		//	//Transmitter code
+		//	if (inputTransmitter->Read() == HIGH) {
+		//		outputTransmitter->Write(HIGH);
+		//		outputTransmitter->Write(HIGH);
+		//	}
+		//	else {
+		//		outputTransmitter->Write(LOW);
+		//		outputTransmitter->Write(LOW);
+		//	}
+		//		
+		//	//Infrared sensor code
+		//	if (infradSensor1->Read() == HIGH)
+		//		output1->Write(HIGH);
+		//	else
+		//		output1->Write(LOW);
+		//	if (infradSensor2->Read() == HIGH)
+		//		output2->Write(HIGH);
+		//	else
+		//		output2->Write(LOW);
+		//	if (infradSensor3->Read() == HIGH)
+		//		output3->Write(HIGH);
+		//	else
+		//		output3->Write(LOW);
+
+		//}
 
 
 
 	}
-
-	//testPin = gpio->OpenPin(gpio4); //power-on the pin
-	//testPin->Write(high);
-	//testPin->SetDriveMode(output);
-
 
 	/*Close Pins
 	~inputTransmitter;// = gpio->OpenPin(gpio4);
@@ -177,38 +185,3 @@ MainPage::MainPage()
 {
 	greetingOutput->Text = "Hello, " + nameInput->Text + "!";
 }*/
-
-
-//Definitions
-//GpioPinValue high = GpioPinValue::High; //1
-//GpioPinValue low = GpioPinValue::Low; //0
-//GpioPinDriveMode output = GpioPinDriveMode::Output; //1
-//GpioPinDriveMode outputOD = GpioPinDriveMode::OutputOpenDrain; //4
-//GpioPinDriveMode outputOS = GpioPinDriveMode::OutputOpenSource; //6
-//GpioPinDriveMode outputODPU = GpioPinDriveMode::OutputOpenDrainPullUp; //5
-//GpioPinDriveMode outputOSPD = GpioPinDriveMode::OutputOpenSourcePullDown; //7
-//GpioPinDriveMode input = GpioPinDriveMode::Input; //0
-//GpioPinDriveMode inputPU = GpioPinDriveMode::InputPullUp; //2
-//GpioPinDriveMode inputPD = GpioPinDriveMode::InputPullDown; //3
-//GpioPinValue Read();
-
-
-
-//GPIO pins - uncomment the ones needed
-//const int gpio4 = 4; //Pin for the transmitter
-//const int gpio5 = 5; //Receiver
-//const int gpio6 = 6; //Infrad sensor1 input
-//const int gpio12 = 12; //Infrad sensor2 input
-//const int gpio13 = 13; //Infrad sensor3 input
-//const int gpio16 = 16; //Infrad sensor1 output
-//const int gpio18 = 18; //Infrad sensor2 output
-//const int gpio22 = 22; //Infrad sensor3 output
-//const int gpio19 = 19; //PullDown; header pin 35
-//const int gpio20 = 20; //PullDown; header pin 38
-//const int gpio21 = 21; //PullDown; header pin 40
-//const int gpio22 = 22; //PullDown; header pin 15
-//const int gpio23 = 23; //PullDown; header pin 16
-//const int gpio24 = 24; //PullDown; header pin 18
-//const int gpio25 = 25; //PullDown; header pin 22
-//const int gpio26 = 26; //PullDown; header pin 37
-//const int gpio27 = 27; //PullDown; header pin 13

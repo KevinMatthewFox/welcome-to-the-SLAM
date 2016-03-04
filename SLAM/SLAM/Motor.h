@@ -55,7 +55,7 @@ class Motor
 		void writeINB(GpioPinValue value);
 		void writeENA(GpioPinValue value);
 		void writeENB(GpioPinValue value);
-		~Motor();
+		//~Motor();
 
 	private:
 		//double currDutyCycle;

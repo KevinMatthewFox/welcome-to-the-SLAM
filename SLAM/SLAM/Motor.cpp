@@ -63,15 +63,15 @@ Motor::Motor(const int pwnPinNum, /*PwmController ^pwmController, double dutyCyc
 	return;
 }
 
-Motor::~Motor()
-{
-	enA->Close();
-	enB->Close();
-	inA->Close();
-	inB->Close();
-	pwm->Close();
-	return;
-}
+//Motor::~Motor()
+//{
+//	enA->Close();
+//	enB->Close();
+//	inA->Close();
+//	inB->Close();
+//	pwm->Close();
+//	return;
+//}
 //Motor(GpioPin ^firstPWMPin, /*PwmController ^pwmController, double dutyCycle,*/ GpioController ^gpio, const int inAPin, const int inBPin, const int enAPin, const int enBPin)
 //{
 //	//currDutyCycle = dutyCycle;
