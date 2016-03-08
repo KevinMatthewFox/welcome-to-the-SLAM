@@ -148,53 +148,53 @@
     <ClInclude Include="MainPage.xaml.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="RPLIDAR_app\frame_grabber\AboutDlg.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\drvlogic\common.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\drvlogic\lidarmgr.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\framegrabber.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\MainFrm.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlapp.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlcrack.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlctrls.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlctrlw.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlctrlx.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlddx.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atldlgs.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atldwm.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlfind.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlframe.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlgdi.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlmisc.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlprint.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlres.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlresce.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlribbon.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlscrl.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlsplit.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atltheme.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atluser.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlwince.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlwinx.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\resource.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\scanView.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\SerialSelDlg.h" />
-    <ClInclude Include="RPLIDAR_app\frame_grabber\stdafx.h" />
-    <ClInclude Include="RPLIDAR_sdk\include\rplidar.h" />
-    <ClInclude Include="RPLIDAR_sdk\include\rplidar_cmd.h" />
-    <ClInclude Include="RPLIDAR_sdk\include\rplidar_driver.h" />
-    <ClInclude Include="RPLIDAR_sdk\include\rplidar_protocol.h" />
-    <ClInclude Include="RPLIDAR_sdk\include\rptypes.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\arch\win32\arch_win32.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\arch\win32\net_serial.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\arch\win32\timer.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\arch\win32\winthread.hpp" />
-    <ClInclude Include="RPLIDAR_sdk\src\hal\abs_rxtx.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\hal\event.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\hal\locker.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\hal\thread.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\hal\util.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\rplidar_driver_serial.h" />
-    <ClInclude Include="RPLIDAR_sdk\src\sdkcommon.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\AboutDlg.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\drvlogic\common.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\drvlogic\lidarmgr.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\framegrabber.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\MainFrm.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlapp.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlcrack.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlctrls.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlctrlw.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlctrlx.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlddx.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atldlgs.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atldwm.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlfind.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlframe.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlgdi.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlmisc.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlprint.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlres.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlresce.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlribbon.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlscrl.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlsplit.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atltheme.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atluser.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlwince.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\ref\wtl\atlwinx.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\resource.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\scanView.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\SerialSelDlg.h" />
+    <ClInclude Include="RPLIDAR\frame_grabber\stdafx.h" />
+    <ClInclude Include="RPLIDAR\src\arch\win32\arch_win32.h" />
+    <ClInclude Include="RPLIDAR\src\arch\win32\net_serial.h" />
+    <ClInclude Include="RPLIDAR\src\arch\win32\timer.h" />
+    <ClInclude Include="RPLIDAR\src\arch\win32\winthread.hpp" />
+    <ClInclude Include="RPLIDAR\src\hal\abs_rxtx.h" />
+    <ClInclude Include="RPLIDAR\src\hal\event.h" />
+    <ClInclude Include="RPLIDAR\src\hal\locker.h" />
+    <ClInclude Include="RPLIDAR\src\hal\thread.h" />
+    <ClInclude Include="RPLIDAR\src\hal\util.h" />
+    <ClInclude Include="RPLIDAR\src\rplidar.h" />
+    <ClInclude Include="RPLIDAR\src\rplidar_cmd.h" />
+    <ClInclude Include="RPLIDAR\src\rplidar_driver.h" />
+    <ClInclude Include="RPLIDAR\src\rplidar_driver_serial.h" />
+    <ClInclude Include="RPLIDAR\src\rplidar_protocol.h" />
+    <ClInclude Include="RPLIDAR\src\rptypes.h" />
+    <ClInclude Include="RPLIDAR\src\sdkcommon.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -218,8 +218,8 @@
     <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Image Include="Assets\StoreLogo.png" />
     <Image Include="Assets\Wide310x150Logo.scale-200.png" />
-    <Image Include="RPLIDAR_app\frame_grabber\res\rplidar.ico" />
-    <Image Include="RPLIDAR_app\frame_grabber\res\Toolbar.bmp" />
+    <Image Include="RPLIDAR\frame_grabber\res\rplidar.ico" />
+    <Image Include="RPLIDAR\frame_grabber\res\Toolbar.bmp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp">
@@ -239,25 +239,25 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="RPLIDAR_app\frame_grabber\AboutDlg.cpp" />
-    <ClCompile Include="RPLIDAR_app\frame_grabber\drvlogic\lidarmgr.cpp" />
-    <ClCompile Include="RPLIDAR_app\frame_grabber\framegrabber.cpp" />
-    <ClCompile Include="RPLIDAR_app\frame_grabber\MainFrm.cpp" />
-    <ClCompile Include="RPLIDAR_app\frame_grabber\scanView.cpp" />
-    <ClCompile Include="RPLIDAR_app\frame_grabber\SerialSelDlg.cpp" />
-    <ClCompile Include="RPLIDAR_app\frame_grabber\stdafx.cpp" />
-    <ClCompile Include="RPLIDAR_app\simple_grabber\main.cpp" />
-    <ClCompile Include="RPLIDAR_app\ultra_simple\main.cpp" />
-    <ClCompile Include="RPLIDAR_sdk\src\arch\win32\net_serial.cpp" />
-    <ClCompile Include="RPLIDAR_sdk\src\arch\win32\timer.cpp" />
-    <ClCompile Include="RPLIDAR_sdk\src\hal\thread.cpp" />
-    <ClCompile Include="RPLIDAR_sdk\src\rplidar_driver.cpp" />
+    <ClCompile Include="RPLIDAR\frame_grabber\AboutDlg.cpp" />
+    <ClCompile Include="RPLIDAR\frame_grabber\drvlogic\lidarmgr.cpp" />
+    <ClCompile Include="RPLIDAR\frame_grabber\framegrabber.cpp" />
+    <ClCompile Include="RPLIDAR\frame_grabber\MainFrm.cpp" />
+    <ClCompile Include="RPLIDAR\frame_grabber\scanView.cpp" />
+    <ClCompile Include="RPLIDAR\frame_grabber\SerialSelDlg.cpp" />
+    <ClCompile Include="RPLIDAR\frame_grabber\stdafx.cpp" />
+    <ClCompile Include="RPLIDAR\simple_grabber\main.cpp" />
+    <ClCompile Include="RPLIDAR\src\arch\win32\net_serial.cpp" />
+    <ClCompile Include="RPLIDAR\src\arch\win32\timer.cpp" />
+    <ClCompile Include="RPLIDAR\src\hal\thread.cpp" />
+    <ClCompile Include="RPLIDAR\src\rplidar_driver.cpp" />
+    <ClCompile Include="RPLIDAR\ultra_simple\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="WindowsIoT, Version=10.0.10586.0" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="RPLIDAR_app\frame_grabber\framegrabber.rc" />
+    <ResourceCompile Include="RPLIDAR\frame_grabber\framegrabber.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
