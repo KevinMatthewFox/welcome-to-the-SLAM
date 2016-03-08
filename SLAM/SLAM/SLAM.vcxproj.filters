@@ -8,6 +8,48 @@
       <UniqueIdentifier>a8ef0215-8fea-496d-910d-36849fdf3bf7</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
+    <Filter Include="RPLIDAR_sdk">
+      <UniqueIdentifier>{45961cf9-c275-40c9-8e65-13bcf2569432}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_app">
+      <UniqueIdentifier>{737a2498-e6a8-47de-b609-106b44fb2543}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_sdk\include">
+      <UniqueIdentifier>{9e7a0169-00ff-46ad-bd04-d10cb31a5b61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_sdk\src">
+      <UniqueIdentifier>{cb0c9f94-0177-4433-8970-69f49a034060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_sdk\src\hal">
+      <UniqueIdentifier>{c870407d-400a-4ae1-af3f-7f2af919a2bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_sdk\src\arch">
+      <UniqueIdentifier>{5b9907e2-9c06-4bd1-8938-50dbc32d43d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_sdk\src\arch\win32">
+      <UniqueIdentifier>{8bee2eaf-700e-4377-bc32-e7ee2cac0198}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_app\frame_grabber">
+      <UniqueIdentifier>{6a175d80-9fb0-454b-9804-13494c8fe4ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_app\simple_grabber">
+      <UniqueIdentifier>{d7696562-7b5e-40d1-bca3-48a44eee6f9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_app\ultra_simple">
+      <UniqueIdentifier>{bcc64c35-478c-4733-aff4-ff62d2fd144f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_app\frame_grabber\drvlogic">
+      <UniqueIdentifier>{ef548934-d8b0-46e9-809c-232c539f133a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_app\frame_grabber\ref">
+      <UniqueIdentifier>{d97dd28b-f1fa-4a21-b139-01dabc075a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_app\frame_grabber\res">
+      <UniqueIdentifier>{fc5dcf7e-0450-4eab-8b41-0eb2ed9f74fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RPLIDAR_app\frame_grabber\ref\wtl">
+      <UniqueIdentifier>{10394355-bba5-4d79-a0ab-3fd973bb196f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -19,6 +61,45 @@
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="MotorController.cpp" />
     <ClCompile Include="MotorTest.cpp" />
+    <ClCompile Include="RPLIDAR_sdk\src\hal\thread.cpp">
+      <Filter>RPLIDAR_sdk\src\hal</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_sdk\src\rplidar_driver.cpp">
+      <Filter>RPLIDAR_sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_sdk\src\arch\win32\timer.cpp">
+      <Filter>RPLIDAR_sdk\src\arch\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_sdk\src\arch\win32\net_serial.cpp">
+      <Filter>RPLIDAR_sdk\src\arch\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\frame_grabber\AboutDlg.cpp">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\frame_grabber\framegrabber.cpp">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\frame_grabber\MainFrm.cpp">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\frame_grabber\scanView.cpp">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\frame_grabber\SerialSelDlg.cpp">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\frame_grabber\stdafx.cpp">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\frame_grabber\drvlogic\lidarmgr.cpp">
+      <Filter>RPLIDAR_app\frame_grabber\drvlogic</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\simple_grabber\main.cpp">
+      <Filter>RPLIDAR_app\simple_grabber</Filter>
+    </ClCompile>
+    <ClCompile Include="RPLIDAR_app\ultra_simple\main.cpp">
+      <Filter>RPLIDAR_app\ultra_simple</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -28,6 +109,147 @@
     <ClInclude Include="MotorController.h" />
     <ClInclude Include="GpioDefs.h" />
     <ClInclude Include="MotorTest.h" />
+    <ClInclude Include="RPLIDAR_sdk\src\hal\locker.h">
+      <Filter>RPLIDAR_sdk\src\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\hal\thread.h">
+      <Filter>RPLIDAR_sdk\src\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\hal\util.h">
+      <Filter>RPLIDAR_sdk\src\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\hal\abs_rxtx.h">
+      <Filter>RPLIDAR_sdk\src\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\hal\event.h">
+      <Filter>RPLIDAR_sdk\src\hal</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\rplidar_driver_serial.h">
+      <Filter>RPLIDAR_sdk\src</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\sdkcommon.h">
+      <Filter>RPLIDAR_sdk\src</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rplidar.h">
+      <Filter>RPLIDAR_sdk\include</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rplidar_cmd.h">
+      <Filter>RPLIDAR_sdk\include</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rplidar_driver.h">
+      <Filter>RPLIDAR_sdk\include</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rplidar_protocol.h">
+      <Filter>RPLIDAR_sdk\include</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rptypes.h">
+      <Filter>RPLIDAR_sdk\include</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\arch\win32\timer.h">
+      <Filter>RPLIDAR_sdk\src\arch\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\arch\win32\winthread.hpp">
+      <Filter>RPLIDAR_sdk\src\arch\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\arch\win32\arch_win32.h">
+      <Filter>RPLIDAR_sdk\src\arch\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\src\arch\win32\net_serial.h">
+      <Filter>RPLIDAR_sdk\src\arch\win32</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\AboutDlg.h">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\framegrabber.h">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\MainFrm.h">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\resource.h">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\scanView.h">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\SerialSelDlg.h">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\stdafx.h">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\drvlogic\lidarmgr.h">
+      <Filter>RPLIDAR_app\frame_grabber\drvlogic</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\drvlogic\common.h">
+      <Filter>RPLIDAR_app\frame_grabber\drvlogic</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlctrlw.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlctrlx.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlddx.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atldlgs.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atldwm.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlfind.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlframe.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlgdi.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlmisc.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlprint.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlres.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlresce.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlribbon.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlscrl.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlsplit.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atltheme.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atluser.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlwince.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlwinx.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlapp.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlcrack.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlctrls.h">
+      <Filter>RPLIDAR_app\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
@@ -51,6 +273,12 @@
     <Image Include="Assets\Wide310x150Logo.scale-200.png">
       <Filter>Assets</Filter>
     </Image>
+    <Image Include="RPLIDAR_app\frame_grabber\res\rplidar.ico">
+      <Filter>RPLIDAR_app\frame_grabber\res</Filter>
+    </Image>
+    <Image Include="RPLIDAR_app\frame_grabber\res\Toolbar.bmp">
+      <Filter>RPLIDAR_app\frame_grabber\res</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest" />
@@ -60,5 +288,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="MainPage.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RPLIDAR_app\frame_grabber\framegrabber.rc">
+      <Filter>RPLIDAR_app\frame_grabber</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
