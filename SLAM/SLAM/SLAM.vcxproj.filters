@@ -11,9 +11,6 @@
     <Filter Include="RPLIDAR">
       <UniqueIdentifier>{45961cf9-c275-40c9-8e65-13bcf2569432}</UniqueIdentifier>
     </Filter>
-    <Filter Include="RPLIDAR\include">
-      <UniqueIdentifier>{9e7a0169-00ff-46ad-bd04-d10cb31a5b61}</UniqueIdentifier>
-    </Filter>
     <Filter Include="RPLIDAR\src">
       <UniqueIdentifier>{cb0c9f94-0177-4433-8970-69f49a034060}</UniqueIdentifier>
     </Filter>
@@ -127,21 +124,6 @@
     <ClInclude Include="RPLIDAR_sdk\src\sdkcommon.h">
       <Filter>RPLIDAR\src</Filter>
     </ClInclude>
-    <ClInclude Include="RPLIDAR_sdk\include\rplidar.h">
-      <Filter>RPLIDAR\include</Filter>
-    </ClInclude>
-    <ClInclude Include="RPLIDAR_sdk\include\rplidar_cmd.h">
-      <Filter>RPLIDAR\include</Filter>
-    </ClInclude>
-    <ClInclude Include="RPLIDAR_sdk\include\rplidar_driver.h">
-      <Filter>RPLIDAR\include</Filter>
-    </ClInclude>
-    <ClInclude Include="RPLIDAR_sdk\include\rplidar_protocol.h">
-      <Filter>RPLIDAR\include</Filter>
-    </ClInclude>
-    <ClInclude Include="RPLIDAR_sdk\include\rptypes.h">
-      <Filter>RPLIDAR\include</Filter>
-    </ClInclude>
     <ClInclude Include="RPLIDAR_sdk\src\arch\win32\timer.h">
       <Filter>RPLIDAR\src\arch\win32</Filter>
     </ClInclude>
@@ -246,6 +228,21 @@
     </ClInclude>
     <ClInclude Include="RPLIDAR_app\frame_grabber\ref\wtl\atlctrls.h">
       <Filter>RPLIDAR\frame_grabber\ref\wtl</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rplidar.h">
+      <Filter>RPLIDAR\src</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rplidar_cmd.h">
+      <Filter>RPLIDAR\src</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rplidar_driver.h">
+      <Filter>RPLIDAR\src</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rplidar_protocol.h">
+      <Filter>RPLIDAR\src</Filter>
+    </ClInclude>
+    <ClInclude Include="RPLIDAR_sdk\include\rptypes.h">
+      <Filter>RPLIDAR\src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
