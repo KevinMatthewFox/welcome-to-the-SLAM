@@ -34,7 +34,7 @@
  * 
  */
 
-#include "sdkcommon.h"
+#include "../../sdkcommon.h"
 #include <process.h>
 
 namespace rp{ namespace hal{

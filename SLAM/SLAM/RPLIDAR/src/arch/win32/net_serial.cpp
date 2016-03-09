@@ -34,7 +34,7 @@
  * 
  */
 
-#include "sdkcommon.h"
+#include "../../sdkcommon.h"
 #include "net_serial.h"
 
 namespace rp{ namespace arch{ namespace net{

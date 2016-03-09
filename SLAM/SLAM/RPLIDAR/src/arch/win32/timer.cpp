@@ -34,7 +34,7 @@
  * 
  */
 
-#include "sdkcommon.h"
+#include "../../sdkcommon.h"
 #include <mmsystem.h>
 #pragma comment(lib, "Winmm.lib")
 

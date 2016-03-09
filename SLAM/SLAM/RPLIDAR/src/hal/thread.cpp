@@ -34,11 +34,11 @@
  * 
  */
 
-#include "sdkcommon.h"
-#include "hal/thread.h"
+#include "../sdkcommon.h"
+#include "thread.h"
 
 #if defined(_WIN32)
-#include "arch/win32/winthread.hpp"
+#include "../arch/win32/winthread.hpp"
 #elif defined(_MACOS)
 #include "arch/macOS/thread.hpp"
 #elif defined(__GNUC__)

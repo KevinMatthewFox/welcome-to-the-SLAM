@@ -36,7 +36,7 @@
 
 #pragma once
 
-#include "rptypes.h"
+#include "../../rptypes.h"
 
 #define delay(x)   ::Sleep(x)
 

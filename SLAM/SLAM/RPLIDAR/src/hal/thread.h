@@ -36,7 +36,7 @@
 
 #pragma once
 
-#include "rptypes.h"
+#include "../rptypes.h"
 #define CLASS_THREAD(c , x ) \
 	rp::hal::Thread::create_member<c, &c::x>(this )
 
