@@ -36,7 +36,7 @@
 
 #pragma once 
 
-#include "rptypes.h"
+#include "../rptypes.h"
 
 namespace rp{ namespace hal{
 
