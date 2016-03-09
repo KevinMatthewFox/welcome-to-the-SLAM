@@ -113,4 +113,4 @@ typedef uint32_t u_result;
 #define IS_OK(x)    ( ((x) & RESULT_FAIL_BIT) == 0 )
 #define IS_FAIL(x)  ( ((x) & RESULT_FAIL_BIT) )
 
-typedef _word_size_t (THREAD_PROC * thread_proc_t ) ( void * );
+//typedef _word_size_t (THREAD_PROC *thread_proc_t ) ( void * ); //YO WAT DOES THIS LINE EVEN DO WE DON'T EVEN KNOW (08 MAR)
