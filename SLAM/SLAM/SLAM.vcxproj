@@ -105,9 +105,7 @@
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>SLAM/rplidar_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
@@ -151,11 +149,6 @@
     <ClInclude Include="MainPage.xaml.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
-    <ClInclude Include="rplidar.h" />
-    <ClInclude Include="rplidar_cmd.h" />
-    <ClInclude Include="rplidar_driver.h" />
-    <ClInclude Include="rplidar_protocol.h" />
-    <ClInclude Include="rptypes.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">

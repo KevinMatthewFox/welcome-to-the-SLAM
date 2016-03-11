@@ -8,6 +8,12 @@
       <UniqueIdentifier>a8ef0215-8fea-496d-910d-36849fdf3bf7</UniqueIdentifier>
       <Extensions>bmp;fbx;gif;jpg;jpeg;tga;tiff;tif;png</Extensions>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{db49bf21-dd62-4795-8d6c-92c15221ddff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6da38463-8000-4016-9405-0fe53b35fdcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml" />
@@ -15,24 +21,37 @@
   <ItemGroup>
     <ClCompile Include="App.xaml.cpp" />
     <ClCompile Include="MainPage.xaml.cpp" />
-    <ClCompile Include="pch.cpp" />
-    <ClCompile Include="Motor.cpp" />
-    <ClCompile Include="MotorController.cpp" />
-    <ClCompile Include="MotorTest.cpp" />
+    <ClCompile Include="MotorController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Motor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MotorTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h" />
     <ClInclude Include="MainPage.xaml.h" />
-    <ClInclude Include="Motor.h" />
-    <ClInclude Include="MotorController.h" />
-    <ClInclude Include="GpioDefs.h" />
-    <ClInclude Include="MotorTest.h" />
-    <ClInclude Include="rplidar.h" />
-    <ClInclude Include="rplidar_cmd.h" />
-    <ClInclude Include="rplidar_driver.h" />
-    <ClInclude Include="rplidar_protocol.h" />
-    <ClInclude Include="rptypes.h" />
+    <ClInclude Include="Motor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MotorController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GpioDefs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MotorTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
