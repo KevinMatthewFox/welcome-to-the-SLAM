@@ -37,6 +37,7 @@
 
 #pragma once
 
+#include "rplidar.h"
 #include "rplidar_protocol.h"
 
 // Commands

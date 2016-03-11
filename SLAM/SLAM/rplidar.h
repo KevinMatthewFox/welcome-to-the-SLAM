@@ -39,5 +39,5 @@
 #include "rptypes.h"
 #include "rplidar_protocol.h"
 #include "rplidar_cmd.h"
-
+//#include "rplidar_driver.lib"
 #include "rplidar_driver.h"

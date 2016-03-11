@@ -9,6 +9,7 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
+//#include "rplidar.h"
 #include "MotorController.h"
 #include "GpioDefs.h"
 #include "Motor.h"
