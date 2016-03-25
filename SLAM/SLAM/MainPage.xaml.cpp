@@ -40,6 +40,7 @@ MainPage::MainPage()
 {
 	InitializeComponent();
 
+	std::cout << "test" << std::endl;
 	//Declarations -- Controllers
 	GpioController ^gpio = GpioController::GetDefault();
 	//PwmController ^pwm = nullptr;
@@ -178,7 +179,6 @@ MainPage::MainPage()
 	*/
 
 	//NEED TO DELETE DYNAMICALLY ALLOCATED OBJECTS TO AVOID MEMORY LEAK
-
 	return;
 }
 
