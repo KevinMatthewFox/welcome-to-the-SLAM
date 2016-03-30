@@ -9,12 +9,15 @@
 
 #include "pch.h"
 #include "MainPage.xaml.h"
-//#include "rplidar.h"
+#include "sdk/include/rplidar.h"
 #include "MotorController.h"
 #include "GpioDefs.h"
 #include "Motor.h"
 #include "MotorTest.h"
+#include "Scan.h"
 #include <iostream>
+
+//#pragma (lib, "sdk/rplidar_driver")
 
 using namespace SLAM;
 
@@ -31,8 +34,12 @@ using namespace Windows::UI::Xaml::Navigation;
 using namespace Windows::Devices::Gpio;
 using namespace Windows::Devices::Pwm;
 using namespace Windows::Devices::Enumeration;
+using namespace rp::standalone::rplidar;
 
 //using namespace System;
+
+
+bool checkRPLIDARHealth(RPlidarDriver * drv);
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -40,7 +47,64 @@ MainPage::MainPage()
 {
 	InitializeComponent();
 
-	std::cout << "test" << std::endl;
+	//initializeRPScan();
+
+	// BEGIN RPLIDAR SOURCE CODE //
+	const char * opt_com_path = NULL;
+	_u32         opt_com_baudrate = 115200;
+	u_result     op_result;
+
+	RPlidarDriver *drv = RPlidarDriver::CreateDriver(0x0); //initialize driver
+	if (!drv) {
+		fprintf(stderr, "insufficent memory, exit\n");
+		exit(-2);
+	}
+
+
+	// make connection...
+	if (IS_FAIL(drv->connect(opt_com_path, opt_com_baudrate))) {
+		fprintf(stderr, "Error, cannot bind to the specified serial port %s.\n"
+			, opt_com_path);
+		goto on_finished;
+	}
+
+
+
+	// check health...
+	if (!checkRPLIDARHealth(drv)) {
+		goto on_finished;
+	}
+
+
+	// start scan...
+	drv->startScan();
+
+	// fetech result and print it out...
+	while (1) {
+		rplidar_response_measurement_node_t nodes[360 * 2];
+		size_t   count = _countof(nodes);
+
+		op_result = drv->grabScanData(nodes, count);
+
+		if (IS_OK(op_result)) {
+			drv->ascendScanData(nodes, count);
+			for (int pos = 0; pos < (int)count; ++pos) {
+				printf("%s theta: %03.2f Dist: %08.2f Q: %d \n",
+					(nodes[pos].sync_quality & RPLIDAR_RESP_MEASUREMENT_SYNCBIT) ? "S " : "  ",
+					(nodes[pos].angle_q6_checkbit >> RPLIDAR_RESP_MEASUREMENT_ANGLE_SHIFT) / 64.0f,
+					nodes[pos].distance_q2 / 4.0f,
+					nodes[pos].sync_quality >> RPLIDAR_RESP_MEASUREMENT_QUALITY_SHIFT);
+			}
+		}
+
+	}
+
+on_finished:
+	RPlidarDriver::DisposeDriver(drv);
+	return;
+	// END RPLIDAR SOURCE CODE //
+
+	
 	//Declarations -- Controllers
 	GpioController ^gpio = GpioController::GetDefault();
 	//PwmController ^pwm = nullptr;
@@ -179,6 +243,7 @@ MainPage::MainPage()
 	*/
 
 	//NEED TO DELETE DYNAMICALLY ALLOCATED OBJECTS TO AVOID MEMORY LEAK
+	
 	return;
 }
 
@@ -186,3 +251,29 @@ MainPage::MainPage()
 {
 	greetingOutput->Text = "Hello, " + nameInput->Text + "!";
 }*/
+
+bool checkRPLIDARHealth(RPlidarDriver * drv)
+{
+	u_result     op_result;
+	rplidar_response_device_health_t healthinfo;
+
+
+	op_result = drv->getHealth(healthinfo);
+	if (IS_OK(op_result)) { // the macro IS_OK is the preperred way to judge whether the operation is succeed.
+		printf("RPLidar health status : %d\n", healthinfo.status);
+		if (healthinfo.status == RPLIDAR_STATUS_ERROR) {
+			fprintf(stderr, "Error, rplidar internal error detected. Please reboot the device to retry.\n");
+			// enable the following code if you want rplidar to be reboot by software
+			// drv->reset();
+			return false;
+		}
+		else {
+			return true;
+		}
+
+	}
+	else {
+		fprintf(stderr, "Error, cannot retrieve the lidar health code: %x\n", op_result);
+		return false;
+	}
+}

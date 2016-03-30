@@ -1,0 +1,19 @@
+﻿  pch.cpp
+  App.xaml.cpp
+  MainPage.xaml.cpp
+  Motor.cpp
+  MotorController.cpp
+  MotorTest.cpp
+  Scan.cpp
+  XamlTypeInfo.Impl.g.cpp
+c:\users\fox\documents\arizona\16_spring\ece_498\test\welcome-to-the-slam\slam\slam\scan.cpp(6): warning C4627: '#include "Scan.h"': skipped when looking for precompiled header use
+  c:\users\fox\documents\arizona\16_spring\ece_498\test\welcome-to-the-slam\slam\slam\scan.cpp(6): note: Add directive to 'pch.h' or rebuild precompiled header
+c:\users\fox\documents\arizona\16_spring\ece_498\test\welcome-to-the-slam\slam\slam\sdk\include\rplidar_protocol.h(62): warning C4200: nonstandard extension used: zero-sized array in struct/union (compiling source file Scan.cpp)
+  c:\users\fox\documents\arizona\16_spring\ece_498\test\welcome-to-the-slam\slam\slam\sdk\include\rplidar_protocol.h(62): note: Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array (compiling source file Scan.cpp)
+c:\users\fox\documents\arizona\16_spring\ece_498\test\welcome-to-the-slam\slam\slam\sdk\include\rplidar_protocol.h(62): warning C4200: nonstandard extension used: zero-sized array in struct/union (compiling source file MainPage.xaml.cpp)
+  c:\users\fox\documents\arizona\16_spring\ece_498\test\welcome-to-the-slam\slam\slam\sdk\include\rplidar_protocol.h(62): note: Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array (compiling source file MainPage.xaml.cpp)
+  XamlTypeInfo.g.cpp
+     Creating library C:\Users\Fox\Documents\Arizona\16_Spring\ECE_498\TEST\welcome-to-the-SLAM\SLAM\Debug\SLAM\SLAM.lib and object C:\Users\Fox\Documents\Arizona\16_Spring\ECE_498\TEST\welcome-to-the-SLAM\SLAM\Debug\SLAM\SLAM.exp
+MainPage.xaml.obj : error LNK2019: unresolved external symbol "public: static class rp::standalone::rplidar::RPlidarDriver * __cdecl rp::standalone::rplidar::RPlidarDriver::CreateDriver(unsigned int)" (?CreateDriver@RPlidarDriver@rplidar@standalone@rp@@SAPAV1234@I@Z) referenced in function "public: __cdecl SLAM::MainPage::MainPage(void)" (??0MainPage@SLAM@@Q$AAA@XZ)
+MainPage.xaml.obj : error LNK2019: unresolved external symbol "public: static void __cdecl rp::standalone::rplidar::RPlidarDriver::DisposeDriver(class rp::standalone::rplidar::RPlidarDriver *)" (?DisposeDriver@RPlidarDriver@rplidar@standalone@rp@@SAXPAV1234@@Z) referenced in function "public: __cdecl SLAM::MainPage::MainPage(void)" (??0MainPage@SLAM@@Q$AAA@XZ)
+C:\Users\Fox\Documents\Arizona\16_Spring\ECE_498\TEST\welcome-to-the-SLAM\SLAM\Debug\SLAM\SLAM.exe : fatal error LNK1120: 2 unresolved externals

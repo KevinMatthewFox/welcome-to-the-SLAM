@@ -106,6 +106,10 @@
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
     </ClCompile>
     <Link />
+    <Link>
+      <AdditionalLibraryDirectories>"C:\Users\Fox\Documents\Arizona\16_Spring\ECE_498\TEST\welcome-to-the-SLAM\SLAM\SLAM\sdk";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>"rplidar_driver.lib";%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
     <ClCompile>
@@ -130,6 +134,10 @@
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\Fox\Documents\Arizona\16_Spring\ECE_498\TEST\welcome-to-the-SLAM\SLAM\SLAM\sdk;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>rplidar_driver.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -149,6 +157,12 @@
     <ClInclude Include="MainPage.xaml.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="Scan.h" />
+    <ClInclude Include="sdk\include\rplidar.h" />
+    <ClInclude Include="sdk\include\rplidar_cmd.h" />
+    <ClInclude Include="sdk\include\rplidar_driver.h" />
+    <ClInclude Include="sdk\include\rplidar_protocol.h" />
+    <ClInclude Include="sdk\include\rptypes.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -191,8 +205,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Scan.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <SDKReference Include="Microsoft.NET.Native.Runtime.1.1, Version=1.1" />
+    <SDKReference Include="Microsoft.VCLibs.120, Version=14.0" />
     <SDKReference Include="WindowsIoT, Version=10.0.10586.0" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
