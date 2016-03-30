@@ -18,6 +18,7 @@
 
 using namespace SLAM;
 
+
 using namespace Platform;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;

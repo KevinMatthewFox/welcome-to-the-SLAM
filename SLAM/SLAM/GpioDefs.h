@@ -5,6 +5,8 @@
 // Author: Kevin Fox
 // 
 
+#define GPIO2 2//Pin for IMU SDA (I2C)
+#define GPIO3 3 //Pin for IMU SCL (I2C)
 #define GPIO4 4 //Pin for the transmitter
 #define GPIO5 5 //Receiver
 #define GPIO6 6 //INFRAD SENSOR1 INPUT

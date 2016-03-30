@@ -19,6 +19,8 @@
     <ClCompile Include="Motor.cpp" />
     <ClCompile Include="MotorController.cpp" />
     <ClCompile Include="MotorTest.cpp" />
+    <ClCompile Include="IMUTest.cpp" />
+    <ClCompile Include="..\..\..\Adafruit_BNO055.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
@@ -33,6 +35,8 @@
     <ClInclude Include="rplidar_driver.h" />
     <ClInclude Include="rplidar_protocol.h" />
     <ClInclude Include="rptypes.h" />
+    <ClInclude Include="..\..\..\Adafruit_BNO055.h" />
+    <ClInclude Include="..\..\..\Adafruit_Sensor.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\LockScreenLogo.scale-200.png">
