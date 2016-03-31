@@ -47,6 +47,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -107,8 +108,9 @@
     </ClCompile>
     <Link />
     <Link>
-      <AdditionalLibraryDirectories>"C:\Users\Fox\Documents\Arizona\16_Spring\ECE_498\TEST\welcome-to-the-SLAM\SLAM\SLAM\sdk";%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>"rplidar_driver.lib";%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10586.0\um\arm;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernal32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'">
@@ -163,6 +165,12 @@
     <ClInclude Include="sdk\include\rplidar_driver.h" />
     <ClInclude Include="sdk\include\rplidar_protocol.h" />
     <ClInclude Include="sdk\include\rptypes.h" />
+    <ClInclude Include="sdk\src\arch\win32\arch_win32.h" />
+    <ClInclude Include="sdk\src\arch\win32\net_serial.h" />
+    <ClInclude Include="sdk\src\arch\win32\timer.h" />
+    <ClInclude Include="sdk\src\arch\win32\winthread.hpp" />
+    <ClInclude Include="sdk\src\rplidar_driver_serial.h" />
+    <ClInclude Include="sdk\src\sdkcommon.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -206,6 +214,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Scan.cpp" />
+    <ClCompile Include="sdk\src\arch\win32\net_serial.cpp" />
+    <ClCompile Include="sdk\src\arch\win32\timer.cpp" />
+    <ClCompile Include="sdk\src\rplidar_driver.cpp" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.NET.Native.Runtime.1.1, Version=1.1" />

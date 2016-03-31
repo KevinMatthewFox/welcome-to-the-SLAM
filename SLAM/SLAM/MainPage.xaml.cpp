@@ -16,6 +16,7 @@
 #include "MotorTest.h"
 #include "Scan.h"
 #include <iostream>
+#include <Windows.h>
 
 //#pragma (lib, "sdk/rplidar_driver")
 

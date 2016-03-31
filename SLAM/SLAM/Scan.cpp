@@ -3,8 +3,10 @@
 // Author: Kevin Fox
 //
 
-#include "Scan.h"
 #include "pch.h"
+
+#include "Scan.h"
+
 #include "sdk/include/rplidar.h"
 #include "sdk/include/rplidar_cmd.h"
 #include "sdk/include/rplidar_driver.h"

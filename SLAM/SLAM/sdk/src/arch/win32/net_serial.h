@@ -36,6 +36,8 @@
 
 #pragma once
 
+#include <Windows.h>
+
 #include "sdk/src/hal/abs_rxtx.h"
 
 namespace rp{ namespace arch{ namespace net{

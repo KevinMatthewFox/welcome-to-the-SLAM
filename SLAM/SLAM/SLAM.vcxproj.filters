@@ -51,6 +51,15 @@
     <ClCompile Include="Scan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="sdk\src\rplidar_driver.cpp">
+      <Filter>sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\src\arch\win32\net_serial.cpp">
+      <Filter>sdk\src\arch</Filter>
+    </ClCompile>
+    <ClCompile Include="sdk\src\arch\win32\timer.cpp">
+      <Filter>sdk\src\arch</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.xaml.h" />
@@ -87,6 +96,24 @@
     </ClInclude>
     <ClInclude Include="sdk\include\rptypes.h">
       <Filter>sdk\include</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\src\rplidar_driver_serial.h">
+      <Filter>sdk\src</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\src\sdkcommon.h">
+      <Filter>sdk\src</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\src\arch\win32\arch_win32.h">
+      <Filter>sdk\src\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\src\arch\win32\net_serial.h">
+      <Filter>sdk\src\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\src\arch\win32\timer.h">
+      <Filter>sdk\src\arch</Filter>
+    </ClInclude>
+    <ClInclude Include="sdk\src\arch\win32\winthread.hpp">
+      <Filter>sdk\src\arch</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

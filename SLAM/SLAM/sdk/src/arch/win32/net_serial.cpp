@@ -35,15 +35,19 @@
  */
 
 
+
 #include "pch.h"
-#include "sdk/include/rplidar.h"
 
 #include <Windows.h>
+
+#include "sdk/include/rplidar.h"
+
 #include <WinBase.h>
 #include <ioapiset.h>
 #include <fileapi.h>
+#include <cstdio>
 
-#include "sdk/src/sdkcommon.h"
+#include "C:\Users\Fox\Documents\Arizona\16_Spring\ECE_498\TEST\welcome-to-the-SLAM\SLAM\SLAM\sdk\src\sdkcommon.h"
 #include "net_serial.h"
 
 namespace rp{ namespace arch{ namespace net{
