@@ -37,6 +37,20 @@
 #include "sdk/src/sdkcommon.h"
 #include <process.h>
 
+
+WINBASEAPI
+BOOL
+WINAPI
+TerminateThread(
+	_In_ HANDLE hThread,
+	_In_ DWORD dwExitCode
+	); 
+
+//BOOL WINAPI TerminateThread(
+//	_Inout_ HANDLE hThread,
+//	_In_ DWORD dwExitCode
+//	);
+
 namespace rp{ namespace hal{
 
 Thread Thread::create(thread_proc_t proc, void * data)

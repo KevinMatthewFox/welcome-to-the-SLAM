@@ -34,8 +34,9 @@
  * 
  */
 
-#include "sdk/include/rplidar.h"
+
 #include "pch.h"
+#include "sdk/include/rplidar.h"
 
 #include "sdkcommon.h"
 #include "hal/abs_rxtx.h"

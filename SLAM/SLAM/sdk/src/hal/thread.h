@@ -60,7 +60,7 @@ public:
 		return create(_thread_thunk<T,PROC>, pthis);
 	}
 
-	template <class T, u_result (T::*PROC)(void) >
+	template <class T, u_result (T::*PROC)(void)>
 	static _word_size_t THREAD_PROC _thread_thunk(void * data)
 	{
 		return (static_cast<T *>(data)->*PROC)();

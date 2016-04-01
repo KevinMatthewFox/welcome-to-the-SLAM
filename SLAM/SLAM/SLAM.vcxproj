@@ -105,11 +105,12 @@
     <ClCompile>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link />
     <Link>
-      <AdditionalLibraryDirectories>C:\Program Files (x86)\Windows Kits\10\Lib\10.0.10586.0\um\arm;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>kernal32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Fox\Documents\Arizona\16_Spring\ECE_498\TEST\welcome-to-the-SLAM\SLAM\ARM\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
   </ItemDefinitionGroup>
@@ -148,6 +149,11 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\rb-rpk-01_rplidar_sdk_v1.4.5\RB-Rpk-01_RPLIDAR_SDK_v1.4.5\sdk\sdk\include\rplidar.h" />
+    <ClInclude Include="..\..\..\..\rb-rpk-01_rplidar_sdk_v1.4.5\RB-Rpk-01_RPLIDAR_SDK_v1.4.5\sdk\sdk\include\rplidar_cmd.h" />
+    <ClInclude Include="..\..\..\..\rb-rpk-01_rplidar_sdk_v1.4.5\RB-Rpk-01_RPLIDAR_SDK_v1.4.5\sdk\sdk\include\rplidar_driver.h" />
+    <ClInclude Include="..\..\..\..\rb-rpk-01_rplidar_sdk_v1.4.5\RB-Rpk-01_RPLIDAR_SDK_v1.4.5\sdk\sdk\include\rplidar_protocol.h" />
+    <ClInclude Include="..\..\..\..\rb-rpk-01_rplidar_sdk_v1.4.5\RB-Rpk-01_RPLIDAR_SDK_v1.4.5\sdk\sdk\include\rptypes.h" />
     <ClInclude Include="GpioDefs.h" />
     <ClInclude Include="Motor.h" />
     <ClInclude Include="MotorController.h" />
@@ -160,17 +166,11 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
     <ClInclude Include="Scan.h" />
-    <ClInclude Include="sdk\include\rplidar.h" />
-    <ClInclude Include="sdk\include\rplidar_cmd.h" />
-    <ClInclude Include="sdk\include\rplidar_driver.h" />
-    <ClInclude Include="sdk\include\rplidar_protocol.h" />
-    <ClInclude Include="sdk\include\rptypes.h" />
-    <ClInclude Include="sdk\src\arch\win32\arch_win32.h" />
-    <ClInclude Include="sdk\src\arch\win32\net_serial.h" />
-    <ClInclude Include="sdk\src\arch\win32\timer.h" />
-    <ClInclude Include="sdk\src\arch\win32\winthread.hpp" />
-    <ClInclude Include="sdk\src\rplidar_driver_serial.h" />
-    <ClInclude Include="sdk\src\sdkcommon.h" />
+    <ClInclude Include="sdk\src\hal\abs_rxtx.h" />
+    <ClInclude Include="sdk\src\hal\event.h" />
+    <ClInclude Include="sdk\src\hal\locker.h" />
+    <ClInclude Include="sdk\src\hal\thread.h" />
+    <ClInclude Include="sdk\src\hal\util.h" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -214,14 +214,17 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Scan.cpp" />
-    <ClCompile Include="sdk\src\arch\win32\net_serial.cpp" />
-    <ClCompile Include="sdk\src\arch\win32\timer.cpp" />
-    <ClCompile Include="sdk\src\rplidar_driver.cpp" />
+    <ClCompile Include="sdk\src\hal\thread.cpp" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.NET.Native.Runtime.1.1, Version=1.1" />
     <SDKReference Include="Microsoft.VCLibs.120, Version=14.0" />
     <SDKReference Include="WindowsIoT, Version=10.0.10586.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\rb-rpk-01_rplidar_sdk_v1.4.5\RB-Rpk-01_RPLIDAR_SDK_v1.4.5\sdk\workspaces\vc10\rplidar_driver\rplidar_driver.vcxproj">
+      <Project>{1f0aa469-8a8f-4ada-931d-967d2c5996df}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

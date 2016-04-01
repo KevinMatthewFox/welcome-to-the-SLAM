@@ -79,6 +79,7 @@ typedef uint64_t       _u64;
 
 
 // The _word_size_t uses actual data bus width of the current CPU
+/*
 #ifdef _AVR_
 typedef _u8            _word_size_t;
 #define THREAD_PROC    
@@ -86,8 +87,10 @@ typedef _u8            _word_size_t;
 typedef _u64           _word_size_t;
 #define THREAD_PROC    __stdcall
 #elif defined (WIN32)
+*/
 typedef _u32           _word_size_t;
 #define THREAD_PROC    __stdcall
+/*
 #elif defined (__GNUC__)
 typedef unsigned long  _word_size_t;
 #define THREAD_PROC   
@@ -95,6 +98,7 @@ typedef unsigned long  _word_size_t;
 typedef _u32            _word_size_t;
 #define THREAD_PROC  
 #endif
+*/
 
 
 typedef uint32_t u_result;

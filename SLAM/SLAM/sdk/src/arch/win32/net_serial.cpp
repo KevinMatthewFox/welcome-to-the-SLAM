@@ -42,6 +42,8 @@
 
 #include "sdk/include/rplidar.h"
 
+#include "sdk\src\arch\win32\net_serial_ex.h"
+
 #include <WinBase.h>
 #include <ioapiset.h>
 #include <fileapi.h>
