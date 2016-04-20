@@ -9,7 +9,10 @@
 
 #include <cstdio>
 #include <cstdlib>
+#include <wiringPi.h>
+#include <softPwm.h>
 #include "rplidar.h"
+#include "motor.h"
 
 #ifndef _countof
 #define _countof(_Array) (int)(sizeof(_Array) / sizeof(_Array[0]))
@@ -17,10 +20,25 @@
 
 using namespace rp::standalone::rplidar; //rplidar namespace
 
-bool checkRPLIDARHealth(RPlidarDriver * drv);
-
 int main (int argc, char* argv[])
 {
+	////**** MOTOR INITIALIZATION ****////
+	wiringPiSetup();
+	pinMode(0, INPUT); // Header Pin 11
+	pinMode(7, OUTPUT); // Header Pin 7
+	pinMode(5, OUTPUT); // Header Pin 18
+	pinMode(6, OUTPUT); // Header Pin 22
+	pinMode(27, OUTPUT); // Header Pin 36
+	pinMode(1, OUTPUT); // Header Pin 12
+	pinMode(25, OUTPUT); // Header Pin 37
+	pinMode(2, OUTPUT); // Header Pin 13
+	pinMode(24, OUTPUT); // Header Pin 35
+	pinMode(3, OUTPUT); // Header Pin 15
+
+	softPwmCreate(28, 0, 100); // Creating pwm pins - header pin 38
+	softPwmCreate(29, 0, 100); // Header Pin 40
+	////**** END MOTOR INITIALIZATION ****////
+	
 	////**** RPLIDAR INITIALIZATION ****////
 	const char	*opt_com_path = NULL;
 	_u32		opt_com_baudrate = 115200;
@@ -58,7 +76,7 @@ int main (int argc, char* argv[])
 	}
 	
 	// create the driver instance
-    RPlidarDriver * drv = RPlidarDriver::CreateDriver(RPlidarDriver::DRIVER_TYPE_SERIALPORT);
+    RPlidarDriver *drv = RPlidarDriver::CreateDriver(RPlidarDriver::DRIVER_TYPE_SERIALPORT);
 	
 	if (!drv) 
 	{
@@ -85,7 +103,6 @@ int main (int argc, char* argv[])
 	{
         goto on_finished;
     }
-	
 	////**** END RPLIDAR INITIALIZATION ****////
 	
 	////**** BEGIN RPLIDAR SCAN ****////
@@ -118,32 +135,21 @@ int main (int argc, char* argv[])
 	////**** END RPLIDAR SCAN ****////
 }
 
-bool checkRPLIDARHealth(RPlidarDriver * drv)
-{
-    u_result     op_result;
-    rplidar_response_device_health_t healthinfo;
-
-
-    op_result = drv->getHealth(healthinfo);
-    if (IS_OK(op_result)) // the macro IS_OK is the preperred way to judge whether the operation is succeed.
-	{ 
-        printf("RPLidar health status : %d\n", healthinfo.status);
-        if (healthinfo.status == RPLIDAR_STATUS_ERROR) 
+//Ryan's code from newmotor.c
+/*
+	while (1) {
+		if (digitalRead(0) == HIGH)
 		{
-            fprintf(stderr, "Error, rplidar internal error detected. Please reboot the device to retry.\n");
-            // enable the following code if you want rplidar to be reboot by software
-            // drv->reset();
-            return false;
-        } 
-		else 
-		{
-            return true;
-        }
-
-    } 
-	else 
-	{
-        fprintf(stderr, "Error, cannot retrieve the lidar health code: %x\n", op_result);
-        return false;
-    }
-}
+			softPwmWrite(28,100);
+			softPwmWrite(29,30);
+			digitalWrite(7, HIGH);
+			goForward();
+		}
+		else {
+			
+			softPwmWrite(28,0);
+			softPwmWrite(29,0);
+			digitalWrite(7, LOW);
+		}
+	}
+*/
