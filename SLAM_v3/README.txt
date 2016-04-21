@@ -3,8 +3,8 @@ NetID: kevinmatthewfox
 
 https://github.com/KevinMatthewFox/welcome-to-the-SLAM
 
-mkdir build
-cd build
-cmake ..
-make
-./src/SLAM
+     mkdir build //if there is not already a build directory
+     cd build
+     cmake ..
+     make
+     sudo ./src/SLAM
