@@ -13,6 +13,7 @@
 #include <softPwm.h>
 #include "rplidar.h"
 #include "motor.h"
+#include "check_health.h"
 
 #ifndef _countof
 #define _countof(_Array) (int)(sizeof(_Array) / sizeof(_Array[0]))

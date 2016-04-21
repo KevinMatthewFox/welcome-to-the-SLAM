@@ -7,8 +7,9 @@
 // Autonomous Mapping
 //
 
+#include <cstdio>
 #include "rplidar.h"
-#include "checkHealth.h"
+#include "check_health.h"
 
 using namespace rp::standalone::rplidar; //rplidar namespace
 

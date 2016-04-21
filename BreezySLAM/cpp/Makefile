@@ -22,28 +22,28 @@
 #   <https:#projects.ardrone.org/attachments/278/ParrotCopyrightAndDisclaimer.txt>.
 
 # Where you want to put the library
-LIBDIR = C:\Users\Xander\Desktop\498 code\RPLidar-SLAMbot-master\libraries\breezyslam\cpp
+LIBDIR = /usr/local/lib
 
 # Set library extension based on OS
-# ifeq ("$(shell uname)","Darwin")
-#  LIBEXT = dylib
-#else ifeq ("$(shell uname)","Linux")
- # CFLAGS = -fPIC
- # LIBEXT = so
-# else
-LIBEXT = dll
-# endif
+ifeq ("$(shell uname)","Darwin")
+  LIBEXT = dylib
+else ifeq ("$(shell uname)","Linux")
+  CFLAGS = -fPIC
+  LIBEXT = so
+else
+  LIBEXT = dll
+endif
 
-#ARCH = $(shell uname -m)
+ARCH = $(shell uname -m)
 
 # Set SIMD compile params based on architecture
-#ifeq ("$(ARCH)","armv7l")
-  #SIMD_FLAGS = -mfpu=neon
-#else ifeq ("$(ARCH)","i686")
- # SIMD_FLAGS = -msse3
-#else
-ARCH = sisd
-#endif
+ifeq ("$(ARCH)","armv7l")
+  SIMD_FLAGS = -mfpu=neon
+else ifeq ("$(ARCH)","i686")
+  SIMD_FLAGS = -msse3
+else
+  ARCH = sisd
+endif
 
 all: libbreezyslam.$(LIBEXT)
 

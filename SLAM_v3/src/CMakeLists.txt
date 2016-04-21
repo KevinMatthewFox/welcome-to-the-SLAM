@@ -27,4 +27,4 @@ file( GLOB SRCS *.cpp *.h )
 
 add_executable( SLAM ${SRCS} )
 
-target_link_libraries ( SLAM pthread )
+target_link_libraries ( SLAM pthread wiringPi)
