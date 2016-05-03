@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <wiringPi.h>
 #include <softPwm.h>
+#include <unistd.h> //for usleep testing
 #include "rplidar.h"
 #include "motor.h"
 #include "check_health.h"
@@ -35,9 +36,14 @@ int main (int argc, char* argv[])
 	pinMode(2, OUTPUT); // Header Pin 13
 	pinMode(24, OUTPUT); // Header Pin 35
 	pinMode(3, OUTPUT); // Header Pin 15
+	pinMode(26 , INPUT); // Header Pin 32 - TRANSMITTER INPUT
 
+	goIdle(); //motor off
+	
 	softPwmCreate(28, 0, 100); // Creating pwm pins - header pin 38
 	softPwmCreate(29, 0, 100); // Header Pin 40
+	
+	
 	////**** END MOTOR INITIALIZATION ****////
 	
 	////**** RPLIDAR INITIALIZATION ****////
@@ -110,7 +116,7 @@ int main (int argc, char* argv[])
 	drv->startScan();
 
     // This is fetching the result and printing it out - will edit when finalized with other systems
-    while (1) 
+/*    while (1) 
 	{
         rplidar_response_measurement_node_t nodes[360*2];
         size_t   count = _countof(nodes);
@@ -129,11 +135,71 @@ int main (int argc, char* argv[])
         }
 
     }
-	
+*/	
 	on_finished:
 		RPlidarDriver::DisposeDriver(drv);
 		return 0;
 	////**** END RPLIDAR SCAN ****////
+	int state = 0;
+	int pauseNext = 0;
+	
+	////**** BEGIN MOTOR AND TRANSMITTER TEST ****////
+	while (1)
+	{
+		if (digitalRead(transmitterPinNumber) == HIGH)
+		{
+			usleep(10000);
+			if (digitalRead(transmitterPinNumber) == HIGH)
+			{
+					if (!pauseNext)
+					{
+						switch (state)
+						{
+						case 0:
+							goForward();
+							state++;
+							break;
+						case 1:
+							goReverse();
+							state++;
+							break;
+						case 2:
+							goLeft();
+							state++;
+							break;
+						case 3:
+							goRotLeft();
+							state++;
+							break;
+						case 4:
+							goRight();
+							state++;
+							break;
+						case 5:
+							goRotRight();
+							state = 0;
+							break;
+						}
+						pauseNext = 1;
+						usleep(10000);
+					}
+					else
+					{
+						goIdle();
+						pauseNext = 0;
+						usleep(10000);
+					}
+			}
+			else
+			{				
+			}
+		}
+		else
+		{		
+		}
+	}
+	
+	return 0;
 }
 
 //Ryan's code from newmotor.c
